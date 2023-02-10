@@ -1,18 +1,16 @@
-name: 'connector_name'
+name: 'reddit_ads_source'
 version: '0.1.0'
+
 config-version: 2
-require-dbt-version: [">=1.0.0", "<2.0.0"]
-
-models:
-  connector:
-    +schema: stg_connector_name #connector for transform package
-    +materialized: table # for building the package, switch to views later? 
-
+require-dbt-version: [">=1.3.0", "<2.0.0"]
 vars:
-  connector:
-    table_name: "{{ ref('stg_connector__table_name') }}" # all references to staging models should be vars
-
-  connector_source:
-    table_name: "{{ source('connector', 'table_name') }}" # all sources should be vars
-
-
+  reddit_ads_source:
+  # add vars
+  #  add pass through metrics?
+  reddit_ads__account_passthrough_metrics: []
+models:
+  reddit_ads_source:
+    +schema: reddit_ads_source
+    +materialized: table
+    tmp:
+      +materialized: view
