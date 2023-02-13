@@ -16,18 +16,357 @@ sources:
       enabled: "{{ var('ad_reporting__reddit_ads_enabled', true) }}"
     
     tables:
-      - name: account 
+      - name: account
+        identifier: "{{ var('reddit_ads_account_identifier', 'account ') }}"
+        description: Each record in this table represents information about an account.
+        columns:
+          - name: id
+            description: '{{ doc("account_id") }}'
+          - name: attribution_type
+            description: '{{ doc("attribution_type") }}'
+          - name: click_attribution_window
+            description: '{{ doc("click_attribution_window") }}'
+          - name: created_at
+            description: '{{ doc("created_at") }}'
+          - name: currency
+            description: '{{ doc("currency") }}'
+          - name: status
+            description: '{{ doc("status") }}'
+          - name: time_zone_id
+            description: '{{ doc("time_zone_id") }}'
+          - name: view_attribution_window
+            description: '{{ doc("view_attribution_window") }}'
+
       - name: account_report
-      - name: account_conversions_report
+        identifier: "{{ var('reddit_ads_account_report_identifier', 'account_report') }}"
+        description: 
+        columns:
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: clicks
+            description: '{{ doc("clicks") }}'
+          - name: comment_downvotes
+            description: '{{ doc("comment_downvotes") }}'
+          - name: comment_upvotes
+            description: '{{ doc("comment_upvotes") }}'
+          - name: comments_page_views
+            description: '{{ doc("comments_page_views") }}'
+          - name: conversion_roas
+            description: '{{ doc("conversion_roas") }}'
+          - name: cpc
+            description: '{{ doc("cpc") }}'
+          - name: ctr
+            description: '{{ doc("ctr") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: ecpm
+            description: '{{ doc("ecpm") }}'
+          - name: impressions
+            description: '{{ doc("impressions") }}'
+          - name: region
+            description: '{{ doc("region") }}'
+          - name: spend
+            description: '{{ doc("spend") }}'
+          - name: video_started
+            description: '{{ doc("video_started") }}'
+          - name: video_watched_25_percent
+            description: '{{ doc("video_watched_25_percent") }}'
+          - name: video_watched_3_seconds
+            description: '{{ doc("video_watched_3_seconds") }}'
+          - name: video_watched_50_percent
+            description: '{{ doc("video_watched_50_percent") }}'
+          - name: video_watched_5_seconds
+            description: '{{ doc("video_watched_5_seconds") }}'
+          - name: video_watched_75_percent
+            description: '{{ doc("video_watched_75_percent") }}'
+          - name: viewer_comments
+            description: '{{ doc("viewer_comments") }}'
+
       - name: ad
+        identifier: "{{ var('reddit_ads_ad_identifier', 'ad') }}"
+        description: 
+        columns:
+        - name: _fivetran_synced
+          description: '{{ doc("_fivetran_synced") }}'
+        - name: account_id
+          description: '{{ doc("account_id") }}'
+        - name: ad_group_id
+          description: '{{ doc("ad_group_id") }}'
+        - name: campaign_id
+          description: '{{ doc("campaign_id") }}'
+        - name: click_url
+          description: '{{ doc("click_url") }}'
+        - name: configured_status
+          description: '{{ doc("configured_status") }}'
+        - name: effective_status
+          description: '{{ doc("effective_status") }}'
+        - name: id
+          description: '{{ doc("ad_id") }}'
+        - name: is_processing
+          description: '{{ doc("is_processing") }}'
+        - name: name
+          description: '{{ doc("ad_name") }}'
+        - name: post_id
+          description: '{{ doc("post_id") }}'
+        - name: post_url
+          description: '{{ doc("post_url") }}'
+        - name: rejection_reason
+          description: '{{ doc("rejection_reason") }}'
+
       - name: ad_report
-      - name: ad_conversions_report
+        identifier: "{{ var('reddit_ads_ad_report_identifier', 'ad_report') }}"
+        description: 
+        columns:
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: ad_id
+            description: '{{ doc("ad_id") }}'
+          - name: clicks
+            description: '{{ doc("clicks") }}'
+          - name: comment_downvotes
+            description: '{{ doc("comment_downvotes") }}'
+          - name: comment_upvotes
+            description: '{{ doc("comment_upvotes") }}'
+          - name: comments_page_views
+            description: '{{ doc("comments_page_views") }}'
+          - name: conversion_roas
+            description: '{{ doc("conversion_roas") }}'
+          - name: cpc
+            description: '{{ doc("cpc") }}'
+          - name: ctr
+            description: '{{ doc("ctr") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: ecpm
+            description: '{{ doc("ecpm") }}'
+          - name: impressions
+            description: '{{ doc("impressions") }}'
+          - name: region
+            description: '{{ doc("region") }}'
+          - name: spend
+            description: '{{ doc("spend") }}'
+          - name: video_started
+            description: '{{ doc("video_started") }}'
+          - name: video_watched_25_percent
+            description: '{{ doc("video_watched_25_percent") }}'
+          - name: video_watched_3_seconds
+            description: '{{ doc("video_watched_3_seconds") }}'
+          - name: video_watched_50_percent
+            description: '{{ doc("video_watched_50_percent") }}'
+          - name: video_watched_5_seconds
+            description: '{{ doc("video_watched_5_seconds") }}'
+          - name: video_watched_75_percent
+            description: '{{ doc("video_watched_75_percent") }}'
+          - name: viewer_comments
+            description: '{{ doc("viewer_comments") }}'
+
       - name: ad_group
+        identifier: "{{ var('reddit_ads_ad_group_identifier', 'ad_group') }}"
+        description: Get all ad groups belonging to an advertiser.
+        columns:
+          - name: _fivetran_synced
+            desription: '{{ doc("_fivetran_synced") }}'
+          - name: account_id
+            desription: '{{ doc("account_id") }}'
+          - name: bid_strategy
+            desription: '{{ doc("bid_strategy") }}'
+          - name: bid_value
+            desription: '{{ doc("bid_value") }}'
+          - name: campaign_id
+            desription: '{{ doc("campaign_id") }}'
+          - name: configured_status
+            desription: '{{ doc("configured_status") }}'
+          - name: effective_status
+            desription: '{{ doc("effective_status") }}'
+          - name: end_time
+            desription: '{{ doc("end_time") }}'
+          - name: expand_targeting
+            desription: '{{ doc("expand_targeting") }}'
+          - name: goal_type
+            desription: '{{ doc("goal_type") }}'
+          - name: goal_value
+            desription: '{{ doc("goal_value") }}'
+          - name: id
+            desription: '{{ doc("ad_group_id") }}'
+          - name: is_processing
+            desription: '{{ doc("is_processing") }}'
+          - name: name
+            desription: '{{ doc("ad_group_name") }}'
+          - name: optimization_strategy_type
+            desription: '{{ doc("optimization_strategy_type") }}'
+          - name: start_time
+            desription: '{{ doc("start_time") }}'
+
       - name: ad_group_report
-      - name: ad_group_conversions_report
+        identifier: "{{ var('reddit_ads_ad_group_report_identifier', 'ad_group_report') }}"
+        description: 
+        columns:
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: ad_group_id
+            description: '{{ doc("ad_group_id") }}'
+          - name: clicks
+            description: '{{ doc("clicks") }}'
+          - name: comment_downvotes
+            description: '{{ doc("comment_downvotes") }}'
+          - name: comment_upvotes
+            description: '{{ doc("comment_upvotes") }}'
+          - name: comments_page_views
+            description: '{{ doc("comments_page_views") }}'
+          - name: conversion_roas
+            description: '{{ doc("conversion_roas") }}'
+          - name: cpc
+            description: '{{ doc("cpc") }}'
+          - name: ctr
+            description: '{{ doc("ctr") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: ecpm
+            description: '{{ doc("ecpm") }}'
+          - name: impressions
+            description: '{{ doc("impressions") }}'
+          - name: region
+            description: '{{ doc("region") }}'
+          - name: spend
+            description: '{{ doc("spend") }}'
+          - name: video_started
+            description: '{{ doc("video_started") }}'
+          - name: video_watched_25_percent
+            description: '{{ doc("video_watched_25_percent") }}'
+          - name: video_watched_3_seconds
+            description: '{{ doc("video_watched_3_seconds") }}'
+          - name: video_watched_50_percent
+            description: '{{ doc("video_watched_50_percent") }}'
+          - name: video_watched_5_seconds
+            description: '{{ doc("video_watched_5_seconds") }}'
+          - name: video_watched_75_percent
+            description: '{{ doc("video_watched_75_percent") }}'
+          - name: viewer_comments
+            description: '{{ doc("viewer_comments") }}'
+
       - name: campaign
+        identifier: "{{ var('reddit_ads_campaign_identifier', 'campaign') }}"
+        description: 
+        columns:
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: configured_status
+            description: '{{ doc("configured_status") }}'
+          - name: effective_status
+            description: '{{ doc("effective_status") }}'
+          - name: funding_instrument_id
+            description: '{{ doc("funding_instrument_id") }}'
+          - name: id
+            description: '{{ doc("campaign_id") }}'
+          - name: is_processing
+            description: '{{ doc("is_processing") }}'
+          - name: name
+            description: '{{ doc("campaign_name") }}'
+          - name: objective
+            description: '{{ doc("objective") }}'
+
       - name: campaign_report
-      - name: campaign_conversions_report
+        identifier: "{{ var('reddit_ads_campaign_report_identifier', 'campaign_report') }}"
+        description: 
+        columns:
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: campaign_id
+            description: '{{ doc("campaign_id") }}'
+          - name: clicks
+            description: '{{ doc("clicks") }}'
+          - name: comment_downvotes
+            description: '{{ doc("comment_downvotes") }}'
+          - name: comment_upvotes
+            description: '{{ doc("comment_upvotes") }}'
+          - name: comments_page_views
+            description: '{{ doc("comments_page_views") }}'
+          - name: conversion_roas
+            description: '{{ doc("conversion_roas") }}'
+          - name: cpc
+            description: '{{ doc("cpc") }}'
+          - name: ctr
+            description: '{{ doc("ctr") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: ecpm
+            description: '{{ doc("ecpm") }}'
+          - name: impressions
+            description: '{{ doc("impressions") }}'
+          - name: region
+            description: '{{ doc("region") }}'
+          - name: spend
+            description: '{{ doc("spend") }}'
+          - name: video_started
+            description: '{{ doc("video_started") }}'
+          - name: video_watched_25_percent
+            description: '{{ doc("video_watched_25_percent") }}'
+          - name: video_watched_3_seconds
+            description: '{{ doc("video_watched_3_seconds") }}'
+          - name: video_watched_50_percent
+            description: '{{ doc("video_watched_50_percent") }}'
+          - name: video_watched_5_seconds
+            description: '{{ doc("video_watched_5_seconds") }}'
+          - name: video_watched_75_percent
+            description: '{{ doc("video_watched_75_percent") }}'
+          - name: viewer_comments
+            description: '{{ doc("viewer_comments") }}'
+
       - name: post_report
-      - name: post_conversions_report
-          
+        identifier: "{{ var('reddit_ads_post_report_identifier', 'post_report') }}"
+        description: 
+        columns:
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: post_id
+            description: '{{ doc("post_id") }}'
+          - name: clicks
+            description: '{{ doc("clicks") }}'
+          - name: comment_downvotes
+            description: '{{ doc("comment_downvotes") }}'
+          - name: comment_upvotes
+            description: '{{ doc("comment_upvotes") }}'
+          - name: comments_page_views
+            description: '{{ doc("comments_page_views") }}'
+          - name: conversion_roas
+            description: '{{ doc("conversion_roas") }}'
+          - name: cpc
+            description: '{{ doc("cpc") }}'
+          - name: ctr
+            description: '{{ doc("ctr") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: ecpm
+            description: '{{ doc("ecpm") }}'
+          - name: impressions
+            description: '{{ doc("impressions") }}'
+          - name: region
+            description: '{{ doc("region") }}'
+          - name: spend
+            description: '{{ doc("spend") }}'
+          - name: video_started
+            description: '{{ doc("video_started") }}'
+          - name: video_watched_25_percent
+            description: '{{ doc("video_watched_25_percent") }}'
+          - name: video_watched_3_seconds
+            description: '{{ doc("video_watched_3_seconds") }}'
+          - name: video_watched_50_percent
+            description: '{{ doc("video_watched_50_percent") }}'
+          - name: video_watched_5_seconds
+            description: '{{ doc("video_watched_5_seconds") }}'
+          - name: video_watched_75_percent
+            description: '{{ doc("video_watched_75_percent") }}'
+          - name: viewer_comments
+            description: '{{ doc("viewer_comments") }}'

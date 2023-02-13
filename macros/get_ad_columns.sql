@@ -13,10 +13,7 @@
     {"name": "name", "datatype": dbt_utils.type_string()},
     {"name": "post_id", "datatype": dbt_utils.type_string()},
     {"name": "post_url", "datatype": dbt_utils.type_string()},
-    {"name": "preview_expiry", "datatype": dbt_utils.type_string()},
-    {"name": "preview_url", "datatype": dbt_utils.type_string()},
-    {"name": "rejection_reason", "datatype": dbt_utils.type_string()},
-    {"name": "search_term", "datatype": dbt_utils.type_string()}
+    {"name": "rejection_reason", "datatype": dbt_utils.type_string()}
 ] %}
 
 {{ return(columns) }}
