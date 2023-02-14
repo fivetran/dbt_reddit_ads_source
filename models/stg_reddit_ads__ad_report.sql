@@ -21,37 +21,7 @@ fields as (
 
 final as (
     
-    select 
-    -- rename here
-    from fields
-)
-
-select * from final
-
-with base as (
-
-    select * 
-    from {{ ref('stg_reddit_ads__ad_report_tmp') }}
-
-),
-
-fields as (
-
     select
-        {{
-            fivetran_utils.fill_staging_columns(
-                source_columns=adapter.get_columns_in_relation(ref('stg_reddit_ads__ad_report_tmp')),
-                staging_columns=get_ad_report_columns()
-            )
-        }}
-        
-    from base
-),
-
-final as (
-    
-    select
-        _fivetran_synced,
         account_id,
         ad_id,
         clicks,

@@ -22,7 +22,6 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
         attribution_type,
         click_attribution_window,
         cast(created_at as {{ dbt.type_timestamp() }}) as created_at,

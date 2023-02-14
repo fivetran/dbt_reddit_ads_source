@@ -22,14 +22,13 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
         account_id,
         bid_strategy,
         bid_value,
         campaign_id,
         configured_status,
         effective_status,
-        end_time,
+        cast(end_time as {{ dbt.type_timestamp() }}) as end_time_at,
         expand_targeting,
         goal_type,
         goal_value,
@@ -37,7 +36,7 @@ final as (
         is_processing,
         name,
         optimization_strategy_type,
-        start_time
+        cast(start_time as {{ dbt.type_timestamp() }}) as start_time_at
     from fields
 )
 

@@ -22,7 +22,6 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
         account_id,
         clicks,
         comment_downvotes,
