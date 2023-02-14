@@ -18,7 +18,7 @@ sources:
     tables:
       - name: account
         identifier: "{{ var('reddit_ads_account_identifier', 'account ') }}"
-        description: Each record in this table represents information about an account.
+        description: Each record represents information about an account.
         columns:
           - name: id
             description: '{{ doc("account_id") }}'
@@ -39,7 +39,7 @@ sources:
 
       - name: account_report
         identifier: "{{ var('reddit_ads_account_report_identifier', 'account_report') }}"
-        description: 
+        description: Each record represents a summary of events for each given date and account.
         columns:
           - name: _fivetran_synced
             description: '{{ doc("_fivetran_synced") }}'
@@ -86,7 +86,7 @@ sources:
 
       - name: ad
         identifier: "{{ var('reddit_ads_ad_identifier', 'ad') }}"
-        description: 
+        description: Each record represents information about each ad.
         columns:
         - name: _fivetran_synced
           description: '{{ doc("_fivetran_synced") }}'
@@ -117,7 +117,7 @@ sources:
 
       - name: ad_report
         identifier: "{{ var('reddit_ads_ad_report_identifier', 'ad_report') }}"
-        description: 
+        description: Each record represents a summary of events for each given date and ad.
         columns:
           - name: _fivetran_synced
             description: '{{ doc("_fivetran_synced") }}'
@@ -166,7 +166,7 @@ sources:
 
       - name: ad_group
         identifier: "{{ var('reddit_ads_ad_group_identifier', 'ad_group') }}"
-        description: Get all ad groups belonging to an advertiser.
+        description: Each record represents information about each ad group.
         columns:
           - name: _fivetran_synced
             desription: '{{ doc("_fivetran_synced") }}'
@@ -203,7 +203,7 @@ sources:
 
       - name: ad_group_report
         identifier: "{{ var('reddit_ads_ad_group_report_identifier', 'ad_group_report') }}"
-        description: 
+        description: Each record represents a summary of events for each given date and ad group.
         columns:
           - name: _fivetran_synced
             description: '{{ doc("_fivetran_synced") }}'
@@ -252,7 +252,7 @@ sources:
 
       - name: campaign
         identifier: "{{ var('reddit_ads_campaign_identifier', 'campaign') }}"
-        description: 
+        description: Each record represents information about each campaign.
         columns:
           - name: _fivetran_synced
             description: '{{ doc("_fivetran_synced") }}'
@@ -275,7 +275,7 @@ sources:
 
       - name: campaign_report
         identifier: "{{ var('reddit_ads_campaign_report_identifier', 'campaign_report') }}"
-        description: 
+        description: Each record represents a summary of events for each given date and campaign.
         columns:
           - name: _fivetran_synced
             description: '{{ doc("_fivetran_synced") }}'
@@ -324,7 +324,7 @@ sources:
 
       - name: post_report
         identifier: "{{ var('reddit_ads_post_report_identifier', 'post_report') }}"
-        description: 
+        description: Each record represents a summary of events for each given date and post.
         columns:
           - name: _fivetran_synced
             description: '{{ doc("_fivetran_synced") }}'
