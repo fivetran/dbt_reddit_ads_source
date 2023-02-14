@@ -2,7 +2,6 @@ version: 2
 
 models:
   - name: stg_reddit_ads__account
-    identifier: "{{ var('reddit_ads_account_identifier', 'account') }}"
     description: Each record in this table represents information about an account.
     columns:
       - name: account_id
@@ -31,7 +30,6 @@ models:
           combination_of_columns:
             - account_id
             - day_date
-    identifier: "{{ var('reddit_ads_account_report_identifier', 'account_report') }}"
     description: Each record represents a summary of events for each given date and account.
     columns:
       - name: account_id
@@ -76,7 +74,6 @@ models:
         description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__ad
-    identifier: "{{ var('reddit_ads_ad_identifier', 'ad') }}"
     description: Each record represents information about each ad.
     columns:
       - name: ad_id
@@ -115,7 +112,6 @@ models:
           combination_of_columns:
             - ad_id
             - day_date
-    identifier: "{{ var('reddit_ads_ad_report_identifier', 'ad_report') }}"
     description: Each record represents a summary of events for each given date and ad.
     columns:
       - name: account_id
@@ -162,7 +158,6 @@ models:
         description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__ad_group
-    identifier: "{{ var('reddit_ads_ad_group_identifier', 'ad_group') }}"
     description: Each record represents information about each ad group.
     columns:
       - name: ad_group_id
@@ -207,7 +202,6 @@ models:
           combination_of_columns:
             - ad_group_id
             - day_date
-    identifier: "{{ var('reddit_ads_ad_group_report_identifier', 'ad_group_report') }}"
     description: Each record represents a summary of events for each given date and ad group.
     columns:
       - name: account_id
@@ -254,7 +248,6 @@ models:
         description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__campaign
-    identifier: "{{ var('reddit_ads_campaign_identifier', 'campaign') }}"
     description: Each record represents information about each campaign.
     columns:
       - name: campaign_id
@@ -283,7 +276,6 @@ models:
           combination_of_columns:
             - campaign_id
             - day_date
-    identifier: "{{ var('reddit_ads_campaign_report_identifier', 'campaign_report') }}"
     description: Each record represents a summary of events for each given date and campaign.
     columns:
       - name: account_id
@@ -335,7 +327,6 @@ models:
           combination_of_columns:
             - post_id
             - day_date
-    identifier: "{{ var('reddit_ads_post_report_identifier', 'post_report') }}"
     description: Each record represents a summary of events for each given date and post.
     columns:
       - name: account_id
