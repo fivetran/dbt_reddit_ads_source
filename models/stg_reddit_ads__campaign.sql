@@ -28,7 +28,7 @@ final as (
         funding_instrument_id,
         id as campaign_id,
         is_processing,
-        name,
+        name as campaign_name,
         objective
     from fields
 )

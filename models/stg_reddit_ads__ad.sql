@@ -30,7 +30,7 @@ final as (
         effective_status,
         id as ad_id,
         is_processing,
-        name,
+        nameas ad_name,
         post_id,
         post_url,
         rejection_reason

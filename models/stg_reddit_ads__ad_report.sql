@@ -31,7 +31,7 @@ final as (
         conversion_roas,
         cpc,
         ctr,
-        date,
+        day_date, -- renamed in macro
         ecpm,
         impressions,
         region,

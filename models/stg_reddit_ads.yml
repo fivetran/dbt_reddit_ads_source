@@ -1,468 +1,365 @@
 version: 2
 
 models:
-  - name: stg_microsoft_ads__account_history
-    identifier: "{{ var('microsoft_ads_account_history_identifier', 'account_history') }}"
-    description: Each record in this table represents a version of one or more Microsoft accounts.
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - account_id
-            - modified_at
+  - name: stg_reddit_ads__account
+    identifier: "{{ var('reddit_ads_account_identifier', 'account ') }}"
+    description: Each record in this table represents information about an account.
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
-        tests:
-          - not_null
-      - name: account_name
-        description: '{{ doc("account_name") }}'
-      - name: modified_at
-        description: '{{ doc("modified_at") }}'
-      - name: time_zone
-        description: '{{ doc("time_zone") }}'
-      - name: currency_code
-        description: '{{ doc("currency_code") }}'
-      - name: is_most_recent_record
-        description: '{{ doc("is_most_recent_record") }}'
-    
-  - name: stg_microsoft_ads__account_daily_report
-    identifier: "{{ var('microsoft_ads_account_daily_report_identifier', 'account_performance_daily_report') }}"
-    description: Each record in this table represents the daily performance by account and all non-metric columns.
+      - name: attribution_type
+        description: '{{ doc("attribution_type") }}'
+      - name: click_attribution_window
+        description: '{{ doc("click_attribution_window") }}'
+      - name: created_at
+        description: '{{ doc("created_at") }}'
+      - name: currency
+        description: '{{ doc("currency") }}'
+      - name: status
+        description: '{{ doc("status") }}'
+      - name: time_zone_id
+        description: '{{ doc("time_zone_id") }}'
+      - name: view_attribution_window
+        description: '{{ doc("view_attribution_window") }}'
+
+  - name: stg_reddit_ads__account_report
     tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - date_day
-            - account_id
-            - device_os
-            - device_type
-            - network
-            - currency_code
-            - ad_distribution
-            - bid_match_type
-            - delivered_match_type
-            - top_vs_other
+    identifier: "{{ var('reddit_ads_account_report_identifier', 'account_report') }}"
+    description: 
     columns:
-      - name: date_day
-        description: '{{ doc("date_day") }}' 
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
-        tests:
-          - not_null
-      - name: device_os
-        description: '{{ doc("device_os") }}'
-      - name: device_type
-        description: '{{ doc("device_type") }}'
-      - name: network
-        description: '{{ doc("network") }}'
-      - name: currency_code
-        description: '{{ doc("currency_code") }}'
-      - name: ad_distribution
-        description: '{{ doc("ad_distribution") }}'
-      - name: bid_match_type
-        description: '{{ doc("bid_match_type") }}'
-      - name: delivered_match_type
-        description: '{{ doc("delivered_match_type") }}'
-      - name: top_vs_other
-        description: '{{ doc("top_vs_other") }}'
       - name: clicks
         description: '{{ doc("clicks") }}'
+      - name: comment_downvotes
+        description: '{{ doc("comment_downvotes") }}'
+      - name: comment_upvotes
+        description: '{{ doc("comment_upvotes") }}'
+      - name: comments_page_views
+        description: '{{ doc("comments_page_views") }}'
+      - name: conversion_roas
+        description: '{{ doc("conversion_roas") }}'
+      - name: cpc
+        description: '{{ doc("cpc") }}'
+      - name: ctr
+        description: '{{ doc("ctr") }}'
+      - name: date
+        description: '{{ doc("date") }}'
+      - name: ecpm
+        description: '{{ doc("ecpm") }}'
       - name: impressions
         description: '{{ doc("impressions") }}'
+      - name: region
+        description: '{{ doc("region") }}'
       - name: spend
         description: '{{ doc("spend") }}'
+      - name: video_started
+        description: '{{ doc("video_started") }}'
+      - name: video_watched_25_percent
+        description: '{{ doc("video_watched_25_percent") }}'
+      - name: video_watched_3_seconds
+        description: '{{ doc("video_watched_3_seconds") }}'
+      - name: video_watched_50_percent
+        description: '{{ doc("video_watched_50_percent") }}'
+      - name: video_watched_5_seconds
+        description: '{{ doc("video_watched_5_seconds") }}'
+      - name: video_watched_75_percent
+        description: '{{ doc("video_watched_75_percent") }}'
+      - name: viewer_comments
+        description: '{{ doc("viewer_comments") }}'
 
-  - name: stg_microsoft_ads__ad_group_history
-    identifier: "{{ var('microsoft_ads_ad_group_history_identifier', 'ad_group_history') }}"
-    description: Each record in this table represents a version of one or more Microsoft ad groups.
+  - name: stg_reddit_ads__ad
     tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - ad_group_id
-            - modified_at
+    identifier: "{{ var('reddit_ads_ad_identifier', 'ad') }}"
+    description: 
     columns:
+    - name: _fivetran_synced
+      description: '{{ doc("_fivetran_synced") }}'
+    - name: account_id
+      description: '{{ doc("account_id") }}'
+    - name: ad_group_id
+      description: '{{ doc("ad_group_id") }}'
+    - name: campaign_id
+      description: '{{ doc("campaign_id") }}'
+    - name: click_url
+      description: '{{ doc("click_url") }}'
+    - name: configured_status
+      description: '{{ doc("configured_status") }}'
+    - name: effective_status
+      description: '{{ doc("effective_status") }}'
+    - name: ad_id
+      description: '{{ doc("ad_id") }}'
+    - name: is_processing
+      description: '{{ doc("is_processing") }}'
+    - name: ad_name
+      description: '{{ doc("ad_name") }}'
+    - name: post_id
+      description: '{{ doc("post_id") }}'
+    - name: post_url
+      description: '{{ doc("post_url") }}'
+    - name: rejection_reason
+      description: '{{ doc("rejection_reason") }}'
+
+  - name: stg_reddit_ads__ad_report
+    tests:
+    identifier: "{{ var('reddit_ads_ad_report_identifier', 'ad_report') }}"
+    description: 
+    columns:
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+      - name: ad_id
+        description: '{{ doc("ad_id") }}'
+      - name: clicks
+        description: '{{ doc("clicks") }}'
+      - name: comment_downvotes
+        description: '{{ doc("comment_downvotes") }}'
+      - name: comment_upvotes
+        description: '{{ doc("comment_upvotes") }}'
+      - name: comments_page_views
+        description: '{{ doc("comments_page_views") }}'
+      - name: conversion_roas
+        description: '{{ doc("conversion_roas") }}'
+      - name: cpc
+        description: '{{ doc("cpc") }}'
+      - name: ctr
+        description: '{{ doc("ctr") }}'
+      - name: date
+        description: '{{ doc("date") }}'
+      - name: ecpm
+        description: '{{ doc("ecpm") }}'
+      - name: impressions
+        description: '{{ doc("impressions") }}'
+      - name: region
+        description: '{{ doc("region") }}'
+      - name: spend
+        description: '{{ doc("spend") }}'
+      - name: video_started
+        description: '{{ doc("video_started") }}'
+      - name: video_watched_25_percent
+        description: '{{ doc("video_watched_25_percent") }}'
+      - name: video_watched_3_seconds
+        description: '{{ doc("video_watched_3_seconds") }}'
+      - name: video_watched_50_percent
+        description: '{{ doc("video_watched_50_percent") }}'
+      - name: video_watched_5_seconds
+        description: '{{ doc("video_watched_5_seconds") }}'
+      - name: video_watched_75_percent
+        description: '{{ doc("video_watched_75_percent") }}'
+      - name: viewer_comments
+        description: '{{ doc("viewer_comments") }}'
+
+  - name: stg_reddit_ads__ad_group
+    tests:
+    identifier: "{{ var('reddit_ads_ad_group_identifier', 'ad_group') }}"
+    description: Get all ad groups belonging to an advertiser.
+    columns:
+      - name: _fivetran_synced
+        desription: '{{ doc("_fivetran_synced") }}'
+      - name: account_id
+        desription: '{{ doc("account_id") }}'
+      - name: bid_strategy
+        desription: '{{ doc("bid_strategy") }}'
+      - name: bid_value
+        desription: '{{ doc("bid_value") }}'
+      - name: campaign_id
+        desription: '{{ doc("campaign_id") }}'
+      - name: configured_status
+        desription: '{{ doc("configured_status") }}'
+      - name: effective_status
+        desription: '{{ doc("effective_status") }}'
+      - name: end_time_at
+        desription: '{{ doc("end_time") }}'
+      - name: expand_targeting
+        desription: '{{ doc("expand_targeting") }}'
+      - name: goal_type
+        desription: '{{ doc("goal_type") }}'
+      - name: goal_value
+        desription: '{{ doc("goal_value") }}'
       - name: ad_group_id
-        description: '{{ doc("ad_group_id") }}'
-        tests:
-          - not_null
+        desription: '{{ doc("ad_group_id") }}'
+      - name: is_processing
+        desription: '{{ doc("is_processing") }}'
       - name: ad_group_name
-        description: '{{ doc("ad_group_name") }}'
-      - name: campaign_id
-        description: '{{ doc("campaign_id") }}'
-      - name: modified_at
-        description: '{{ doc("modified_at") }}'
-      - name: start_date
-        description: '{{ doc("start_date") }}'
-      - name: end_date
-        description: '{{ doc("end_date") }}'
-      - name: status
-        description: '{{ doc("ad_group_status") }}'
-      - name: is_most_recent_record
-        description: '{{ doc("is_most_recent_record") }}'
+        desription: '{{ doc("ad_group_name") }}'
+      - name: optimization_strategy_type
+        desription: '{{ doc("optimization_strategy_type") }}'
+      - name: start_time_at
+        desription: '{{ doc("start_time") }}'
 
-  - name: stg_microsoft_ads__ad_group_daily_report
-    identifier: "{{ var('microsoft_ads_ad_group_daily_report_identifier', 'ad_group_performance_daily_report') }}"
-    description: Each record in this table represents the daily performance by account, campaign, ad group and all non-metric columns.
+  - name: stg_reddit_ads__ad_group_report
     tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - date_day
-            - account_id
-            - campaign_id
-            - ad_group_id
-            - device_os
-            - device_type
-            - network
-            - language
-            - currency_code
-            - ad_distribution
-            - bid_match_type
-            - delivered_match_type
-            - top_vs_other
+    identifier: "{{ var('reddit_ads_ad_group_report_identifier', 'ad_group_report') }}"
+    description: 
     columns:
-      - name: date_day
-        description: '{{ doc("date_day") }}' 
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
-      - name: campaign_id
-        description: '{{ doc("campaign_id") }}'
       - name: ad_group_id
         description: '{{ doc("ad_group_id") }}'
-        tests:
-          - not_null
-      - name: currency_code
-        description: '{{ doc("currency_code") }}'
-      - name: device_os
-        description: '{{ doc("device_os") }}'
-      - name: device_type
-        description: '{{ doc("device_type") }}'
-      - name: network
-        description: '{{ doc("network") }}'
-      - name: language
-        description: '{{ doc("language") }}'
-      - name: ad_distribution
-        description: '{{ doc("ad_distribution") }}'
-      - name: bid_match_type
-        description: '{{ doc("bid_match_type") }}'
-      - name: delivered_match_type
-        description: '{{ doc("delivered_match_type") }}'
-      - name: top_vs_other
-        description: '{{ doc("top_vs_other") }}'
       - name: clicks
         description: '{{ doc("clicks") }}'
+      - name: comment_downvotes
+        description: '{{ doc("comment_downvotes") }}'
+      - name: comment_upvotes
+        description: '{{ doc("comment_upvotes") }}'
+      - name: comments_page_views
+        description: '{{ doc("comments_page_views") }}'
+      - name: conversion_roas
+        description: '{{ doc("conversion_roas") }}'
+      - name: cpc
+        description: '{{ doc("cpc") }}'
+      - name: ctr
+        description: '{{ doc("ctr") }}'
+      - name: date
+        description: '{{ doc("date") }}'
+      - name: ecpm
+        description: '{{ doc("ecpm") }}'
       - name: impressions
         description: '{{ doc("impressions") }}'
+      - name: region
+        description: '{{ doc("region") }}'
       - name: spend
         description: '{{ doc("spend") }}'
+      - name: video_started
+        description: '{{ doc("video_started") }}'
+      - name: video_watched_25_percent
+        description: '{{ doc("video_watched_25_percent") }}'
+      - name: video_watched_3_seconds
+        description: '{{ doc("video_watched_3_seconds") }}'
+      - name: video_watched_50_percent
+        description: '{{ doc("video_watched_50_percent") }}'
+      - name: video_watched_5_seconds
+        description: '{{ doc("video_watched_5_seconds") }}'
+      - name: video_watched_75_percent
+        description: '{{ doc("video_watched_75_percent") }}'
+      - name: viewer_comments
+        description: '{{ doc("viewer_comments") }}'
 
-  - name: stg_microsoft_ads__ad_history
-    identifier: "{{ var('microsoft_ads_ad_history_identifier', 'ad_history') }}"
-    description: Each record in this table represents a version of one or more Microsoft ads.
+  - name: stg_reddit_ads__campaign
     tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - ad_id
-            - modified_at
+    identifier: "{{ var('reddit_ads_campaign_identifier', 'campaign') }}"
+    description: 
     columns:
-      - name: ad_id
-        description: '{{ doc("ad_id") }}'
-        tests:
-          - not_null
-      - name: ad_name
-        description: '{{ doc("ad_name") }}'
-      - name: final_url 
-        description: '{{ doc("final_url") }}'
-      - name: ad_group_id
-        description: '{{ doc("ad_group_id") }}'
-      - name: modified_at 
-        description: '{{ doc("modified_at") }}'
-      - name: status
-        description: '{{ doc("ad_status") }}'
-      - name: type
-        description: '{{ doc("ad_type") }}'
-      - name: is_most_recent_record
-        description: '{{ doc("is_most_recent_record") }}'
-
-  - name: stg_microsoft_ads__ad_daily_report
-    identifier: "{{ var('microsoft_ads_ad_daily_report_identifier', 'ad_performance_daily_report') }}"
-    description: Each record in this table represents the daily performance by account, campaign, ad group, ad and all non-metric columns.
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - date_day
-            - account_id
-            - campaign_id
-            - ad_group_id
-            - ad_id
-            - device_os
-            - device_type
-            - network
-            - language
-            - currency_code
-            - ad_distribution
-            - bid_match_type
-            - delivered_match_type
-            - top_vs_other
-    columns:
-      - name: date_day
-        description: '{{ doc("date_day") }}' 
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
+      - name: configured_status
+        description: '{{ doc("configured_status") }}'
+      - name: effective_status
+        description: '{{ doc("effective_status") }}'
+      - name: funding_instrument_id
+        description: '{{ doc("funding_instrument_id") }}'
       - name: campaign_id
         description: '{{ doc("campaign_id") }}'
-      - name: ad_group_id
-        description: '{{ doc("ad_group_id") }}'
-      - name: ad_id
-        description: '{{ doc("ad_id") }}'
-        tests:
-          - not_null
-      - name: currency_code
-        description: '{{ doc("currency_code") }}'
-      - name: device_os
-        description: '{{ doc("device_os") }}'
-      - name: device_type
-        description: '{{ doc("device_type") }}'
-      - name: network
-        description: '{{ doc("network") }}'
-      - name: language
-        description: '{{ doc("language") }}'
-      - name: ad_distribution
-        description: '{{ doc("ad_distribution") }}'
-      - name: bid_match_type
-        description: '{{ doc("bid_match_type") }}'
-      - name: delivered_match_type
-        description: '{{ doc("delivered_match_type") }}'
-      - name: top_vs_other
-        description: '{{ doc("top_vs_other") }}'
-      - name: clicks
-        description: '{{ doc("clicks") }}'
-      - name: impressions
-        description: '{{ doc("impressions") }}'
-      - name: spend
-        description: '{{ doc("spend") }}'
-
-  - name: stg_microsoft_ads__campaign_history
-    identifier: "{{ var('microsoft_ads_campaign_history_identifier', 'campaign_history') }}"
-    description: Each record in this table represents a version of one or more Microsoft campaigns.
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - campaign_id
-            - modified_at
-    columns:
-      - name: campaign_id
-        description: '{{ doc("campaign_id") }}'
-        tests:
-          - not_null
+      - name: is_processing
+        description: '{{ doc("is_processing") }}'
       - name: campaign_name
         description: '{{ doc("campaign_name") }}'
-      - name: account_id
-        description: '{{ doc("account_id") }}'
-      - name: modified_at
-        description: '{{ doc("modified_at") }}'
-      - name: type
-        description: '{{ doc("campaign_type") }}'
-      - name: time_zone
-        description: '{{ doc("time_zone") }}'
-      - name: status
-        description: '{{ doc("campaign_status") }}'
-      - name: is_most_recent_record
-        description: '{{ doc("is_most_recent_record") }}'
+      - name: objective
+        description: '{{ doc("objective") }}'
 
-  - name: stg_microsoft_ads__campaign_daily_report
-    identifier: "{{ var('microsoft_ads_campaign_daily_report_identifier', 'campaign_performance_daily_report') }}"
-    description: Each record in this table represents the daily performance by account, campaign and all non-metric columns.
+  - name: stg_reddit_ads__campaign_report
     tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - date_day
-            - account_id
-            - campaign_id
-            - device_os
-            - device_type
-            - network
-            - currency_code
-            - ad_distribution
-            - bid_match_type
-            - delivered_match_type
-            - top_vs_other
-            - budget_association_status
+    identifier: "{{ var('reddit_ads_campaign_report_identifier', 'campaign_report') }}"
+    description: 
     columns:
-      - name: date_day
-        description: '{{ doc("date_day") }}' 
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: campaign_id
         description: '{{ doc("campaign_id") }}'
-        tests:
-          - not_null
-      - name: currency_code
-        description: '{{ doc("currency_code") }}'
-      - name: device_os
-        description: '{{ doc("device_os") }}'
-      - name: device_type
-        description: '{{ doc("device_type") }}'
-      - name: network
-        description: '{{ doc("network") }}'
-      - name: ad_distribution
-        description: '{{ doc("ad_distribution") }}'
-      - name: bid_match_type
-        description: '{{ doc("bid_match_type") }}'
-      - name: delivered_match_type
-        description: '{{ doc("delivered_match_type") }}'
-      - name: top_vs_other
-        description: '{{ doc("top_vs_other") }}'
-      - name: budget_association_status
-        description: '{{ doc("budget_association_status") }}'
       - name: clicks
         description: '{{ doc("clicks") }}'
+      - name: comment_downvotes
+        description: '{{ doc("comment_downvotes") }}'
+      - name: comment_upvotes
+        description: '{{ doc("comment_upvotes") }}'
+      - name: comments_page_views
+        description: '{{ doc("comments_page_views") }}'
+      - name: conversion_roas
+        description: '{{ doc("conversion_roas") }}'
+      - name: cpc
+        description: '{{ doc("cpc") }}'
+      - name: ctr
+        description: '{{ doc("ctr") }}'
+      - name: date
+        description: '{{ doc("date") }}'
+      - name: ecpm
+        description: '{{ doc("ecpm") }}'
       - name: impressions
         description: '{{ doc("impressions") }}'
+      - name: region
+        description: '{{ doc("region") }}'
       - name: spend
         description: '{{ doc("spend") }}'
+      - name: video_started
+        description: '{{ doc("video_started") }}'
+      - name: video_watched_25_percent
+        description: '{{ doc("video_watched_25_percent") }}'
+      - name: video_watched_3_seconds
+        description: '{{ doc("video_watched_3_seconds") }}'
+      - name: video_watched_50_percent
+        description: '{{ doc("video_watched_50_percent") }}'
+      - name: video_watched_5_seconds
+        description: '{{ doc("video_watched_5_seconds") }}'
+      - name: video_watched_75_percent
+        description: '{{ doc("video_watched_75_percent") }}'
+      - name: viewer_comments
+        description: '{{ doc("viewer_comments") }}'
 
-  - name: stg_microsoft_ads__keyword_history
-    identifier: "{{ var('microsoft_ads_keyword_history_identifier', 'keyword_history') }}"
-    description: Each record in this table represents a version of one or more Microsoft keywords.
+  - name: stg_reddit_ads__post_report
     tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - keyword_id
-            - modified_at
+    identifier: "{{ var('reddit_ads_post_report_identifier', 'post_report') }}"
+    description: 
     columns:
-      - name: keyword_id
-        description: '{{ doc("keyword_id") }}'
-        tests:
-          - not_null
-      - name: keyword_name
-        description: '{{ doc("keyword_name") }}'
-      - name: modified_at
-        description: '{{ doc("modified_at") }}'
-      - name: ad_group_id
-        description: '{{ doc("ad_group_id") }}'
-      - name: match_type
-        description: '{{ doc("match_type") }}'
-      - name: status
-        description: '{{ doc("keyword_status") }}'
-      - name: is_most_recent_record
-        description: '{{ doc("is_most_recent_record") }}'
-
-  - name: stg_microsoft_ads__keyword_daily_report
-    identifier: "{{ var('microsoft_ads_keyword_daily_report_identifier', 'keyword_performance_daily_report') }}"
-    description: Each record in this table represents the daily performance by account, campaign, ad group, ad, keyword and all non-metric columns.
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - date_day
-            - account_id
-            - campaign_id
-            - ad_group_id
-            - ad_id
-            - keyword_id
-            - device_os
-            - device_type
-            - network
-            - language
-            - currency_code
-            - ad_distribution
-            - bid_match_type
-            - delivered_match_type
-            - top_vs_other
-    columns:
-      - name: date_day
-        description: '{{ doc("date_day") }}' 
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
-      - name: campaign_id
-        description: '{{ doc("campaign_id") }}'
-      - name: ad_group_id
-        description: '{{ doc("ad_group_id") }}'
-      - name: ad_id
-        description: '{{ doc("ad_id") }}'
-      - name: keyword_id
-        description: '{{ doc("keyword_id") }}'
-        tests:
-          - not_null
-      - name: currency_code
-        description: '{{ doc("currency_code") }}'
-      - name: device_os
-        description: '{{ doc("device_os") }}'
-      - name: device_type
-        description: '{{ doc("device_type") }}'
-      - name: network
-        description: '{{ doc("network") }}'
-      - name: language
-        description: '{{ doc("language") }}'
-      - name: ad_distribution
-        description: '{{ doc("ad_distribution") }}'
-      - name: bid_match_type
-        description: '{{ doc("bid_match_type") }}'
-      - name: delivered_match_type
-        description: '{{ doc("delivered_match_type") }}'
-      - name: top_vs_other
-        description: '{{ doc("top_vs_other") }}'
+      - name: post_id
+        description: '{{ doc("post_id") }}'
       - name: clicks
         description: '{{ doc("clicks") }}'
+      - name: comment_downvotes
+        description: '{{ doc("comment_downvotes") }}'
+      - name: comment_upvotes
+        description: '{{ doc("comment_upvotes") }}'
+      - name: comments_page_views
+        description: '{{ doc("comments_page_views") }}'
+      - name: conversion_roas
+        description: '{{ doc("conversion_roas") }}'
+      - name: cpc
+        description: '{{ doc("cpc") }}'
+      - name: ctr
+        description: '{{ doc("ctr") }}'
+      - name: date
+        description: '{{ doc("date") }}'
+      - name: ecpm
+        description: '{{ doc("ecpm") }}'
       - name: impressions
         description: '{{ doc("impressions") }}'
+      - name: region
+        description: '{{ doc("region") }}'
       - name: spend
         description: '{{ doc("spend") }}'
-
-  - name: stg_microsoft_ads__search_daily_report
-    identifier: "{{ var('microsoft_ads_search_query_daily_report_identifier', 'search_query_performance_daily_report') }}"
-    description: Each record in this table represents the daily performance by account, campaign, ad group, ad, keyword and all non-metric columns.
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - date_day
-            - account_id
-            - campaign_id
-            - ad_group_id
-            - ad_id
-            - keyword_id
-            - search_query
-            - device_os
-            - device_type
-            - network
-            - language
-            - bid_match_type
-            - delivered_match_type
-            - top_vs_other
-    columns:
-      - name: date_day
-        description: '{{ doc("date_day") }}' 
-      - name: account_id
-        description: '{{ doc("account_id") }}'
-      - name: campaign_id
-        description: '{{ doc("campaign_id") }}'
-      - name: ad_group_id
-        description: '{{ doc("ad_group_id") }}'
-      - name: ad_id
-        description: '{{ doc("ad_id") }}'
-      - name: keyword_id
-        description: '{{ doc("keyword_id") }}'
-      - name: search_query
-        description: '{{ doc("top_vs_other") }}'
-        tests:
-          - not_null
-      - name: device_os
-        description: '{{ doc("device_os") }}'
-      - name: device_type
-        description: '{{ doc("device_type") }}'
-      - name: network
-        description: '{{ doc("network") }}'
-      - name: language
-        description: '{{ doc("language") }}'
-      - name: ad_distribution
-        description: '{{ doc("ad_distribution") }}'
-      - name: bid_match_type
-        description: '{{ doc("bid_match_type") }}'
-      - name: delivered_match_type
-        description: '{{ doc("delivered_match_type") }}'
-      - name: top_vs_other
-        description: '{{ doc("top_vs_other") }}'
-      - name: clicks
-        description: '{{ doc("clicks") }}'
-      - name: impressions
-        description: '{{ doc("impressions") }}'
-      - name: spend
-        description: '{{ doc("spend") }}'
+      - name: video_started
+        description: '{{ doc("video_started") }}'
+      - name: video_watched_25_percent
+        description: '{{ doc("video_watched_25_percent") }}'
+      - name: video_watched_3_seconds
+        description: '{{ doc("video_watched_3_seconds") }}'
+      - name: video_watched_50_percent
+        description: '{{ doc("video_watched_50_percent") }}'
+      - name: video_watched_5_seconds
+        description: '{{ doc("video_watched_5_seconds") }}'
+      - name: video_watched_75_percent
+        description: '{{ doc("video_watched_75_percent") }}'
+      - name: viewer_comments
+        description: '{{ doc("viewer_comments") }}'
