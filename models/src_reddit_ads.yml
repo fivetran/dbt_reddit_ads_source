@@ -88,32 +88,32 @@ sources:
         identifier: "{{ var('reddit_ads_ad_identifier', 'ad') }}"
         description: Each record represents information about each ad.
         columns:
-        - name: _fivetran_synced
-          description: '{{ doc("_fivetran_synced") }}'
-        - name: account_id
-          description: '{{ doc("account_id") }}'
-        - name: ad_group_id
-          description: '{{ doc("ad_group_id") }}'
-        - name: campaign_id
-          description: '{{ doc("campaign_id") }}'
-        - name: click_url
-          description: '{{ doc("click_url") }}'
-        - name: configured_status
-          description: '{{ doc("configured_status") }}'
-        - name: effective_status
-          description: '{{ doc("effective_status") }}'
-        - name: id
-          description: '{{ doc("ad_id") }}'
-        - name: is_processing
-          description: '{{ doc("is_processing") }}'
-        - name: name
-          description: '{{ doc("ad_name") }}'
-        - name: post_id
-          description: '{{ doc("post_id") }}'
-        - name: post_url
-          description: '{{ doc("post_url") }}'
-        - name: rejection_reason
-          description: '{{ doc("rejection_reason") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: ad_group_id
+            description: '{{ doc("ad_group_id") }}'
+          - name: campaign_id
+            description: '{{ doc("campaign_id") }}'
+          - name: click_url
+            description: '{{ doc("click_url") }}'
+          - name: configured_status
+            description: '{{ doc("configured_status") }}'
+          - name: effective_status
+            description: '{{ doc("effective_status") }}'
+          - name: id
+            description: '{{ doc("ad_id") }}'
+          - name: is_processing
+            description: '{{ doc("is_processing") }}'
+          - name: name
+            description: '{{ doc("ad_name") }}'
+          - name: post_id
+            description: '{{ doc("post_id") }}'
+          - name: post_url
+            description: '{{ doc("post_url") }}'
+          - name: rejection_reason
+            description: '{{ doc("rejection_reason") }}'
 
       - name: ad_report
         identifier: "{{ var('reddit_ads_ad_report_identifier', 'ad_report') }}"
@@ -169,37 +169,37 @@ sources:
         description: Each record represents information about each ad group.
         columns:
           - name: _fivetran_synced
-            desription: '{{ doc("_fivetran_synced") }}'
+            description: '{{ doc("_fivetran_synced") }}'
           - name: account_id
-            desription: '{{ doc("account_id") }}'
+            description: '{{ doc("account_id") }}'
           - name: bid_strategy
-            desription: '{{ doc("bid_strategy") }}'
+            description: '{{ doc("bid_strategy") }}'
           - name: bid_value
-            desription: '{{ doc("bid_value") }}'
+            description: '{{ doc("bid_value") }}'
           - name: campaign_id
-            desription: '{{ doc("campaign_id") }}'
+            description: '{{ doc("campaign_id") }}'
           - name: configured_status
-            desription: '{{ doc("configured_status") }}'
+            description: '{{ doc("configured_status") }}'
           - name: effective_status
-            desription: '{{ doc("effective_status") }}'
+            description: '{{ doc("effective_status") }}'
           - name: end_time
-            desription: '{{ doc("end_time") }}'
+            description: '{{ doc("end_time") }}'
           - name: expand_targeting
-            desription: '{{ doc("expand_targeting") }}'
+            description: '{{ doc("expand_targeting") }}'
           - name: goal_type
-            desription: '{{ doc("goal_type") }}'
+            description: '{{ doc("goal_type") }}'
           - name: goal_value
-            desription: '{{ doc("goal_value") }}'
+            description: '{{ doc("goal_value") }}'
           - name: id
-            desription: '{{ doc("ad_group_id") }}'
+            description: '{{ doc("ad_group_id") }}'
           - name: is_processing
-            desription: '{{ doc("is_processing") }}'
+            description: '{{ doc("is_processing") }}'
           - name: name
-            desription: '{{ doc("ad_group_name") }}'
+            description: '{{ doc("ad_group_name") }}'
           - name: optimization_strategy_type
-            desription: '{{ doc("optimization_strategy_type") }}'
+            description: '{{ doc("optimization_strategy_type") }}'
           - name: start_time
-            desription: '{{ doc("start_time") }}'
+            description: '{{ doc("start_time") }}'
 
       - name: ad_group_report
         identifier: "{{ var('reddit_ads_ad_group_report_identifier', 'ad_group_report') }}"

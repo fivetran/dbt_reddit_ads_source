@@ -2,11 +2,14 @@ version: 2
 
 models:
   - name: stg_reddit_ads__account
-    identifier: "{{ var('reddit_ads_account_identifier', 'account ') }}"
+    identifier: "{{ var('reddit_ads_account_identifier', 'account') }}"
     description: Each record in this table represents information about an account.
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
+        tests:
+          - unique
+          - not_null
       - name: attribution_type
         description: '{{ doc("attribution_type") }}'
       - name: click_attribution_window
@@ -24,11 +27,13 @@ models:
 
   - name: stg_reddit_ads__account_report
     tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - account_id
+            - day_date
     identifier: "{{ var('reddit_ads_account_report_identifier', 'account_report') }}"
     description: Each record represents a summary of events for each given date and account.
     columns:
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: clicks
@@ -45,7 +50,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: date
+      - name: day_date
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -71,44 +76,48 @@ models:
         description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__ad
-    tests:
     identifier: "{{ var('reddit_ads_ad_identifier', 'ad') }}"
     description: Each record represents information about each ad.
     columns:
-    - name: _fivetran_synced
-      description: '{{ doc("_fivetran_synced") }}'
-    - name: account_id
-      description: '{{ doc("account_id") }}'
-    - name: ad_group_id
-      description: '{{ doc("ad_group_id") }}'
-    - name: campaign_id
-      description: '{{ doc("campaign_id") }}'
-    - name: click_url
-      description: '{{ doc("click_url") }}'
-    - name: configured_status
-      description: '{{ doc("configured_status") }}'
-    - name: effective_status
-      description: '{{ doc("effective_status") }}'
-    - name: ad_id
-      description: '{{ doc("ad_id") }}'
-    - name: is_processing
-      description: '{{ doc("is_processing") }}'
-    - name: ad_name
-      description: '{{ doc("ad_name") }}'
-    - name: post_id
-      description: '{{ doc("post_id") }}'
-    - name: post_url
-      description: '{{ doc("post_url") }}'
-    - name: rejection_reason
-      description: '{{ doc("rejection_reason") }}'
+      - name: ad_id
+        description: '{{ doc("ad_id") }}'
+        tests:
+          - unique
+          - not_null
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+      - name: ad_group_id
+        description: '{{ doc("ad_group_id") }}'
+      - name: campaign_id
+        description: '{{ doc("campaign_id") }}'
+      - name: click_url
+        description: '{{ doc("click_url") }}'
+      - name: configured_status
+        description: '{{ doc("configured_status") }}'
+      - name: effective_status
+        description: '{{ doc("effective_status") }}'
+      - name: is_processing
+        description: '{{ doc("is_processing") }}'
+      - name: ad_name
+        description: '{{ doc("ad_name") }}'
+      - name: post_id
+        description: '{{ doc("post_id") }}'
+      - name: post_url
+        description: '{{ doc("post_url") }}'
+      - name: rejection_reason
+        description: '{{ doc("rejection_reason") }}'
 
   - name: stg_reddit_ads__ad_report
     tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_id
+            - day_date
     identifier: "{{ var('reddit_ads_ad_report_identifier', 'ad_report') }}"
     description: Each record represents a summary of events for each given date and ad.
     columns:
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: ad_id
@@ -127,7 +136,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: date
+      - name: day_date
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -153,50 +162,54 @@ models:
         description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__ad_group
-    tests:
     identifier: "{{ var('reddit_ads_ad_group_identifier', 'ad_group') }}"
     description: Each record represents information about each ad group.
     columns:
-      - name: _fivetran_synced
-        desription: '{{ doc("_fivetran_synced") }}'
-      - name: account_id
-        desription: '{{ doc("account_id") }}'
-      - name: bid_strategy
-        desription: '{{ doc("bid_strategy") }}'
-      - name: bid_value
-        desription: '{{ doc("bid_value") }}'
-      - name: campaign_id
-        desription: '{{ doc("campaign_id") }}'
-      - name: configured_status
-        desription: '{{ doc("configured_status") }}'
-      - name: effective_status
-        desription: '{{ doc("effective_status") }}'
-      - name: end_time_at
-        desription: '{{ doc("end_time") }}'
-      - name: expand_targeting
-        desription: '{{ doc("expand_targeting") }}'
-      - name: goal_type
-        desription: '{{ doc("goal_type") }}'
-      - name: goal_value
-        desription: '{{ doc("goal_value") }}'
       - name: ad_group_id
-        desription: '{{ doc("ad_group_id") }}'
+        description: '{{ doc("ad_group_id") }}'
+        tests:
+          - unique
+          - not_null
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+      - name: bid_strategy
+        description: '{{ doc("bid_strategy") }}'
+      - name: bid_value
+        description: '{{ doc("bid_value") }}'
+      - name: campaign_id
+        description: '{{ doc("campaign_id") }}'
+      - name: configured_status
+        description: '{{ doc("configured_status") }}'
+      - name: effective_status
+        description: '{{ doc("effective_status") }}'
+      - name: end_time_at
+        description: '{{ doc("end_time") }}'
+      - name: expand_targeting
+        description: '{{ doc("expand_targeting") }}'
+      - name: goal_type
+        description: '{{ doc("goal_type") }}'
+      - name: goal_value
+        description: '{{ doc("goal_value") }}'
       - name: is_processing
-        desription: '{{ doc("is_processing") }}'
+        description: '{{ doc("is_processing") }}'
       - name: ad_group_name
-        desription: '{{ doc("ad_group_name") }}'
+        description: '{{ doc("ad_group_name") }}'
       - name: optimization_strategy_type
-        desription: '{{ doc("optimization_strategy_type") }}'
+        description: '{{ doc("optimization_strategy_type") }}'
       - name: start_time_at
-        desription: '{{ doc("start_time") }}'
+        description: '{{ doc("start_time") }}'
 
   - name: stg_reddit_ads__ad_group_report
     tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_group_id
+            - day_date
     identifier: "{{ var('reddit_ads_ad_group_report_identifier', 'ad_group_report') }}"
     description: Each record represents a summary of events for each given date and ad group.
     columns:
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: ad_group_id
@@ -215,7 +228,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: date
+      - name: day_date
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -241,12 +254,14 @@ models:
         description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__campaign
-    tests:
     identifier: "{{ var('reddit_ads_campaign_identifier', 'campaign') }}"
     description: Each record represents information about each campaign.
     columns:
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
+      - name: campaign_id
+        description: '{{ doc("campaign_id") }}'
+        tests:
+          - unique
+          - not_null
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: configured_status
@@ -255,8 +270,6 @@ models:
         description: '{{ doc("effective_status") }}'
       - name: funding_instrument_id
         description: '{{ doc("funding_instrument_id") }}'
-      - name: campaign_id
-        description: '{{ doc("campaign_id") }}'
       - name: is_processing
         description: '{{ doc("is_processing") }}'
       - name: campaign_name
@@ -266,11 +279,13 @@ models:
 
   - name: stg_reddit_ads__campaign_report
     tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - campaign_id
+            - day_date
     identifier: "{{ var('reddit_ads_campaign_report_identifier', 'campaign_report') }}"
     description: Each record represents a summary of events for each given date and campaign.
     columns:
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: campaign_id
@@ -289,7 +304,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: date
+      - name: day_date
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -316,11 +331,13 @@ models:
 
   - name: stg_reddit_ads__post_report
     tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - post_id
+            - day_date
     identifier: "{{ var('reddit_ads_post_report_identifier', 'post_report') }}"
     description: Each record represents a summary of events for each given date and post.
     columns:
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: post_id
@@ -339,7 +356,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: date
+      - name: day_date
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
