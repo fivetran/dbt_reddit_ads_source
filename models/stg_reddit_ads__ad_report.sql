@@ -50,8 +50,29 @@ fields as (
 
 final as (
     
-    select 
-    -- rename here
+    select
+        _fivetran_synced,
+        account_id,
+        ad_id,
+        clicks,
+        comment_downvotes,
+        comment_upvotes,
+        comments_page_views,
+        conversion_roas,
+        cpc,
+        ctr,
+        date,
+        ecpm,
+        impressions,
+        region,
+        spend,
+        video_started,
+        video_watched_25_percent,
+        video_watched_3_seconds,
+        video_watched_50_percent,
+        video_watched_5_seconds,
+        video_watched_75_percent,
+        viewer_comments
     from fields
 )
 

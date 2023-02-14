@@ -25,6 +25,14 @@
     {"name": "viewer_comments", "datatype": dbt_utils.type_int()}
 ] %}
 
+{% if target.type in ('bigquery', 'spark', 'databricks') %}
+    {{ columns.append( {"name": 'date', "datatype": dbt.type_string(), "quote": True, "alias": "day_date" } ) }}
+
+{% else %}
+    {{ columns.append( {"name": 'date', "datatype": "date", "alias": "day_date"} ) }}
+
+{% endif %}
+
 {{ return(columns) }}
 
 {% endmacro %}
