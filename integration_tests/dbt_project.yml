@@ -19,3 +19,8 @@ vars:
 dispatch:
   - macro_namespace: dbt_utils
     search_order: ['spark_utils', 'dbt_utils']
+
+seeds:
+  reddit_ads_source_integration_tests:
+    +column_types:
+      id: "{{ 'INT64' if target.type == 'bigquery' else 'bigint' }}"
