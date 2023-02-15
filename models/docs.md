@@ -15,11 +15,11 @@ The ID of the ad group.
 {% enddocs %}
 
 {% docs campaign_id %}
-The ID of the account.
+The ID of the campaign.
 {% enddocs %}
 
 {% docs post_id %}
-The ID of the account.
+The ID of the post.
 {% enddocs %}
 
 {% docs ad_name %}
@@ -152,10 +152,6 @@ The calculated status determining the real status of this entity.
 
 {% docs is_processing %}
 Whether or not effective status is processing
-{% enddocs %}
-
-{% docs post_id %}
-The ID of the post.
 {% enddocs %}
 
 {% docs post_url %}
