@@ -16,10 +16,6 @@ vars:
   reddit_ads_campaign_report_identifier: "reddit_ads_campaign_report_data"
   reddit_ads_post_report_identifier: "reddit_ads_post_report_data"
 
-seeds:
-  reddit_ads_source_integration_tests:
-    +column_types:
-
 dispatch:
   - macro_namespace: dbt_utils
     search_order: ['spark_utils', 'dbt_utils']
