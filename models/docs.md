@@ -18,9 +18,6 @@ The ID of the ad group.
 The ID of the account.
 {% enddocs %}
 
-{% docs post_id %}
-The ID of the account.
-{% enddocs %}
 
 {% docs ad_name %}
 Name of ad.

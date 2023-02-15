@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: reddit_ads
-    schema: "{{ var('reddit_ads_schema') }}"
+    schema: "{{ var('reddit_ads_schema', 'reddit_ads') }}"
     database: "{% if target.type != 'spark'%}{{ var('reddit_ads', target.database) }}{% endif %}"
     
     loader: Fivetran
@@ -16,8 +16,12 @@ sources:
       enabled: "{{ var('ad_reporting__reddit_ads_enabled', true) }}"
     
     tables:
+      ## I think you may be removing these?
+      - name: campaign_conversions_report
+      - name: post_conversions_report
+      ## end comment
       - name: account
-        identifier: "{{ var('reddit_ads_account_identifier', 'account ') }}"
+        identifier: "{{ var('reddit_ads_account_identifier', 'account') }}"
         description: Each record represents information about an account.
         columns:
           - name: id
