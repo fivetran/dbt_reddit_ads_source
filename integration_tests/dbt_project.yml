@@ -24,3 +24,8 @@ seeds:
   reddit_ads_source_integration_tests:
     +column_types:
       id: "{{ 'INT64' if target.type == 'bigquery' else 'bigint' }}"
+      campaign_id: "{{ 'INT64' if target.type == 'bigquery' else 'bigint' }}"
+      ad_id: "{{ 'INT64' if target.type == 'bigquery' else 'bigint' }}"
+      ad_group_id: "{{ 'INT64' if target.type == 'bigquery' else 'bigint' }}"
+      post_id: "float"
+
