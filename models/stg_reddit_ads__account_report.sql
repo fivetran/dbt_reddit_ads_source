@@ -30,11 +30,11 @@ final as (
         conversion_roas,
         cpc,
         ctr,
-        day_date, -- renamed in macro
+        date_day, -- renamed in macro
         ecpm,
         impressions,
         region,
-        spend,
+        (spend/1000000) as spend,
         video_started,
         video_watched_25_percent,
         video_watched_3_seconds,

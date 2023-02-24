@@ -25,10 +25,10 @@
 ] %}
 
 {% if target.type in ('bigquery', 'spark', 'databricks') %}
-    {{ columns.append( {"name": 'date', "datatype": "date", "quote": True, "alias": "day_date" } ) }}
+    {{ columns.append( {"name": 'date', "datatype": "date", "quote": True, "alias": "date_day" } ) }}
 
 {% else %}
-    {{ columns.append( {"name": 'date', "datatype": "date", "alias": "day_date"} ) }}
+    {{ columns.append( {"name": 'date', "datatype": "date", "alias": "date_day"} ) }}
 
 {% endif %}
 

@@ -29,7 +29,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - account_id
-            - day_date
+            - date_day
     description: Each record represents a summary of events for each given date and account.
     columns:
       - name: account_id
@@ -48,7 +48,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: day_date
+      - name: date_day
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -57,7 +57,7 @@ models:
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
-        description: '{{ doc("spend") }}'
+        description: Spend converted out of microcurrency (so Spend/1,000,000)
       - name: video_started
         description: '{{ doc("video_started") }}'
       - name: video_watched_25_percent
@@ -111,7 +111,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_id
-            - day_date
+            - date_day
     description: Each record represents a summary of events for each given date and ad.
     columns:
       - name: account_id
@@ -132,7 +132,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: day_date
+      - name: date_day
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -141,7 +141,7 @@ models:
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
-        description: '{{ doc("spend") }}'
+        description: Spend converted out of microcurrency (so Spend/1,000,000)
       - name: video_started
         description: '{{ doc("video_started") }}'
       - name: video_watched_25_percent
@@ -201,7 +201,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_group_id
-            - day_date
+            - date_day
     description: Each record represents a summary of events for each given date and ad group.
     columns:
       - name: account_id
@@ -222,7 +222,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: day_date
+      - name: date_day
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -231,7 +231,7 @@ models:
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
-        description: '{{ doc("spend") }}'
+        description: Spend converted out of microcurrency (so Spend/1,000,000)
       - name: video_started
         description: '{{ doc("video_started") }}'
       - name: video_watched_25_percent
@@ -275,7 +275,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - campaign_id
-            - day_date
+            - date_day
     description: Each record represents a summary of events for each given date and campaign.
     columns:
       - name: account_id
@@ -296,7 +296,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: day_date
+      - name: date_day
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -305,7 +305,7 @@ models:
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
-        description: '{{ doc("spend") }}'
+        description: Spend converted out of microcurrency (so Spend/1,000,000)
       - name: video_started
         description: '{{ doc("video_started") }}'
       - name: video_watched_25_percent
@@ -326,7 +326,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - post_id
-            - day_date
+            - date_day
     description: Each record represents a summary of events for each given date and post.
     columns:
       - name: account_id
@@ -347,7 +347,7 @@ models:
         description: '{{ doc("cpc") }}'
       - name: ctr
         description: '{{ doc("ctr") }}'
-      - name: day_date
+      - name: date_day
         description: '{{ doc("date") }}'
       - name: ecpm
         description: '{{ doc("ecpm") }}'
@@ -356,7 +356,7 @@ models:
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
-        description: '{{ doc("spend") }}'
+        description: Spend converted out of microcurrency (so Spend/1,000,000)
       - name: video_started
         description: '{{ doc("video_started") }}'
       - name: video_watched_25_percent
