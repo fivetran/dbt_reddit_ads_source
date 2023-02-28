@@ -35,15 +35,15 @@ Name of campaign.
 {% enddocs %}
 
 {% docs attribution_type %}
-Attribution type: "CLICK_THROUGH_CONVERSION", "VIEW_THROUGH_CONVERSION", or "ALL_CONVERSION"
+Attribution type: "CLICK_THROUGH_CONVERSION", "VIEW_THROUGH_CONVERSION", or "ALL_CONVERSION" 
 {% enddocs %}
 
 {% docs click_attribution_window %}
-"DAY", "WEEK", or "MONTH"
+"DAY", "WEEK", or "MONTH" 
 {% enddocs %}
 
 {% docs created_at %}
-ISO-8601 timestamp
+ISO-8601 timestamp 
 {% enddocs %}
 
 {% docs currency %}
@@ -59,7 +59,7 @@ The time zone id preference for this account
 {% enddocs %}
 
 {% docs view_attribution_window %}
-"DAY", "WEEK", or "MONTH"
+"DAY", "WEEK", or "MONTH" 
 {% enddocs %}
 
 {% docs clicks %}
@@ -91,7 +91,7 @@ The click-through-rate for this period
 {% enddocs %}
 
 {% docs date %}
-YYYY-MM-DD formatted date
+YYYY-MM-DD formatted date 
 {% enddocs %}
 
 {% docs ecpm %}
