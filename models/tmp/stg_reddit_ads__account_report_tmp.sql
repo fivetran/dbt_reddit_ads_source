@@ -1,1 +1,2 @@
-select * from {{ var('account_report') }}
+select *
+from {{ var('account_report') }}

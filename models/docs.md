@@ -107,7 +107,7 @@ The region (US state or UK country) targeted for the reports
 {% enddocs %}
 
 {% docs spend %}
-The amount (in microcurrency) spent for this report period in Ad Account's currency
+The amount (in microcurrency) spent for this report period in Ad Account's currency, as defined [here](https://ads-api.reddit.com/docs/#tag/Reporting/paths/~1api~1v2.0~1accounts~1{account_id}~1reports/get)
 {% enddocs %}
 
 {% docs video_started %}

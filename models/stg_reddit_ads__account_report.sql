@@ -29,7 +29,7 @@ final as (
         conversion_roas,
         cpc,
         ctr,
-        date as date_day, -- renamed in macro
+        date as date_day,
         ecpm,
         impressions,
         region,
@@ -44,4 +44,5 @@ final as (
     from fields
 )
 
-select * from final
+select *
+from final
