@@ -34,6 +34,8 @@ models:
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
+        tests:
+          - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes
@@ -81,8 +83,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: ad_group_id
@@ -118,6 +118,8 @@ models:
         description: '{{ doc("account_id") }}'
       - name: ad_id
         description: '{{ doc("ad_id") }}'
+        tests:
+          - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes
@@ -165,8 +167,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: bid_strategy
@@ -208,6 +208,8 @@ models:
         description: '{{ doc("account_id") }}'
       - name: ad_group_id
         description: '{{ doc("ad_group_id") }}'
+        tests:
+          - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes
@@ -282,6 +284,8 @@ models:
         description: '{{ doc("account_id") }}'
       - name: campaign_id
         description: '{{ doc("campaign_id") }}'
+        tests:
+          - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes
@@ -333,6 +337,8 @@ models:
         description: '{{ doc("account_id") }}'
       - name: post_id
         description: '{{ doc("post_id") }}'
+        tests:
+          - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes

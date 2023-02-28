@@ -1,9 +1,9 @@
+{{ config(enabled=var('ad_reporting__reddit_ads_enabled', True)) }}
 
 with base as (
 
     select * 
     from {{ ref('stg_reddit_ads__post_report_tmp') }}
-
 ),
 
 fields as (
