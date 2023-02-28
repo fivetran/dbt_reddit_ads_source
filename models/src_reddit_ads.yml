@@ -17,7 +17,7 @@ sources:
     
     tables:
       - name: account
-        identifier: "{{ var('reddit_ads_account_identifier', 'account ') }}"
+        identifier: "{{ var('reddit_ads_account_identifier', 'account') }}"
         description: Each record represents information about an account.
         columns:
           - name: id
