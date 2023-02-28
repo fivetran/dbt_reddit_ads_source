@@ -30,6 +30,9 @@ final as (
         status,
         time_zone_id,
         view_attribution_window
+
+        {{ fivetran_utils.fill_pass_through_columns('reddit_ads__account_passthrough_metrics') }}
+
     from fields
 )
 

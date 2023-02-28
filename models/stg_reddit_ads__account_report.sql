@@ -1,9 +1,9 @@
+{{ config(enabled=var('ad_reporting__reddit_ads_enabled', True)) }}
 
 with base as (
 
     select * 
     from {{ ref('stg_reddit_ads__account_report_tmp') }}
-
 ),
 
 fields as (
@@ -15,7 +15,6 @@ fields as (
                 staging_columns=get_account_report_columns()
             )
         }}
-        
     from base
 ),
 
@@ -30,11 +29,11 @@ final as (
         conversion_roas,
         cpc,
         ctr,
-        date_day, -- renamed in macro
+        date_day, -- renamed in macro 
         ecpm,
         impressions,
         region,
-        (spend/1000000) as spend,
+        (spend/1000000) as spend, 
         video_started,
         video_watched_25_percent,
         video_watched_3_seconds,
@@ -45,4 +44,5 @@ final as (
     from fields
 )
 
-select * from final
+select * 
+from final

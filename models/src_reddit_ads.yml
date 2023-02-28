@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: reddit_ads
-    schema: "{{ var('reddit_ads_schema') }}"
+    schema: "{{ var('reddit_ads_schema') }}" 
     database: "{% if target.type != 'spark'%}{{ var('reddit_ads', target.database) }}{% endif %}"
     
     loader: Fivetran
@@ -17,7 +17,7 @@ sources:
     
     tables:
       - name: account
-        identifier: "{{ var('reddit_ads_account_identifier', 'account ') }}"
+        identifier: "{{ var('reddit_ads_account_identifier', 'account') }}"
         description: Each record represents information about an account.
         columns:
           - name: id

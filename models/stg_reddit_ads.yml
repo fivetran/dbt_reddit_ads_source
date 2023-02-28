@@ -33,7 +33,7 @@ models:
     description: Each record represents a summary of events for each given date and account.
     columns:
       - name: account_id
-        description: '{{ doc("account_id") }}'
+        description: '{{ doc("account_id") }}' 
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes
@@ -81,8 +81,8 @@ models:
         tests:
           - unique
           - not_null
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
+      - name: _fivetran_synced 
+        description: '{{ doc("_fivetran_synced") }}' 
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: ad_group_id
@@ -117,7 +117,7 @@ models:
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: ad_id
-        description: '{{ doc("ad_id") }}'
+        description: '{{ doc("ad_id") }}' 
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes
@@ -165,8 +165,8 @@ models:
         tests:
           - unique
           - not_null
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
+      - name: _fivetran_synced 
+        description: '{{ doc("_fivetran_synced") }}' 
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: bid_strategy
@@ -207,7 +207,7 @@ models:
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: ad_group_id
-        description: '{{ doc("ad_group_id") }}'
+        description: '{{ doc("ad_group_id") }}' 
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes
@@ -281,7 +281,7 @@ models:
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: campaign_id
-        description: '{{ doc("campaign_id") }}'
+        description: '{{ doc("campaign_id") }}' 
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes
@@ -332,7 +332,7 @@ models:
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: post_id
-        description: '{{ doc("post_id") }}'
+        description: '{{ doc("post_id") }}' 
       - name: clicks
         description: '{{ doc("clicks") }}'
       - name: comment_downvotes

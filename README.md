@@ -12,7 +12,7 @@
 
 # Reddit Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_reddit_ads_source/))
 # 📣 What does this dbt package do?
-- Materializes [Reddit Ads staging tables](https://fivetran.github.io/dbt_reddit_ads_source/#!/overview/reddit_ads_source/models/?g_v=1&g_e=seeds) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/reddit-advertising#schemainformation). These staging tables clean, test, and prepare your reddit_ads data from [Fivetran's connector](https://fivetran.com/docs/applications/reddit-advertising) for analysis by doing the following:
+- Materializes [Reddit Ads staging tables](https://fivetran.github.io/dbt_reddit_ads_source/#!/overview/reddit_ads_source/models/?g_v=1&g_e=seeds) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/reddit-advertising#schemainformation). These staging tables clean, test, and prepare your reddit_ads data from [Fivetran's connector](https://fivetran.com/docs/applications/reddit-advertising) for analysis by doing the following: 
   - Names columns for consistency across all packages and for easier analysis
   - Adds freshness tests to source data
   - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
@@ -50,9 +50,9 @@ vars:
     reddit_ads_schema: your_schema_name 
 ```
 
-## (Optional) Step 4: Additional configurations
-<details><summary>Expand for configurations</summary>
-
+## (Optional) Step 4: Additional configurations 
+<details><summary>Expand for configurations</summary> 
+ 
 ### Change the build schema
 By default, this package builds the Reddit Ads staging models within a schema titled (`<target_schema>` + `_reddit_ads_source`) in your destination. If this is not where you would like your Reddit Ads staging data to be written to, add the following configuration to your root `dbt_project.yml` file:
 
