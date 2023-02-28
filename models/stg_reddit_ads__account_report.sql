@@ -15,7 +15,6 @@ fields as (
                 staging_columns=get_account_report_columns()
             )
         }}
-        
     from base
 ),
 
@@ -30,7 +29,7 @@ final as (
         conversion_roas,
         cpc,
         ctr,
-        date_day, -- renamed in macro
+        date as date_day, -- renamed in macro
         ecpm,
         impressions,
         region,

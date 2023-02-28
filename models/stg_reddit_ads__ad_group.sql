@@ -15,7 +15,6 @@ fields as (
                 staging_columns=get_ad_group_columns()
             )
         }}
-        
     from base
 ),
 
