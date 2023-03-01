@@ -35,15 +35,18 @@ Name of campaign.
 {% enddocs %}
 
 {% docs attribution_type %}
-Attribution type: "CLICK_THROUGH_CONVERSION", "VIEW_THROUGH_CONVERSION", or "ALL_CONVERSION"
+Attribution type: "CLICK_THROUGH_CONVERSION", "VIEW_THROUGH_CONVERSION", or "ALL_CONVERSION".
+CLICK_THROUGH_CONVERSION: A user clicked on your ad and then completed the conversion action on your site. 
+VIEW_THROUGH_CONVERSION: A user saw your ad and did not click it, but did complete the conversion action on your site.
+ALL_CONVERSION: Combination of both.
 {% enddocs %}
 
 {% docs click_attribution_window %}
-"DAY", "WEEK", or "MONTH"
+Determines how long after clicking on your ad you count that user’s actions as a conversion. "DAY", "WEEK", or "MONTH"
 {% enddocs %}
 
 {% docs created_at %}
-ISO-8601 timestamp
+Time that the respective record (ad, ad group, campaign, post, etc) was created. ISO-8601 timestamp.
 {% enddocs %}
 
 {% docs currency %}
@@ -59,7 +62,7 @@ The time zone id preference for this account
 {% enddocs %}
 
 {% docs view_attribution_window %}
-"DAY", "WEEK", or "MONTH"
+Determines how long after viewing on your ad you count that user’s actions as a conversion. "DAY", "WEEK", or "MONTH"
 {% enddocs %}
 
 {% docs clicks %}
