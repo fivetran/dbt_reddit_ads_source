@@ -41,6 +41,8 @@ final as (
         video_watched_5_seconds,
         video_watched_75_percent,
         viewer_comments
+        
+        {{ fivetran_utils.fill_pass_through_columns('reddit_ads__account_passthrough_metrics') }}
     from fields
 )
 
