@@ -38,42 +38,14 @@ models:
           - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
-      - name: comment_downvotes
-        description: '{{ doc("comment_downvotes") }}'
-      - name: comment_upvotes
-        description: '{{ doc("comment_upvotes") }}'
-      - name: comments_page_views
-        description: '{{ doc("comments_page_views") }}'
-      - name: conversion_roas
-        description: '{{ doc("conversion_roas") }}'
-      - name: cpc
-        description: '{{ doc("cpc") }}'
-      - name: ctr
-        description: '{{ doc("ctr") }}'
       - name: date_day
         description: '{{ doc("date") }}'
-      - name: ecpm
-        description: '{{ doc("ecpm") }}'
       - name: impressions
         description: '{{ doc("impressions") }}'
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
         description: Spend converted out of microcurrency (so Spend/1,000,000)
-      - name: video_started
-        description: '{{ doc("video_started") }}'
-      - name: video_watched_25_percent
-        description: '{{ doc("video_watched_25_percent") }}'
-      - name: video_watched_3_seconds
-        description: '{{ doc("video_watched_3_seconds") }}'
-      - name: video_watched_50_percent
-        description: '{{ doc("video_watched_50_percent") }}'
-      - name: video_watched_5_seconds
-        description: '{{ doc("video_watched_5_seconds") }}'
-      - name: video_watched_75_percent
-        description: '{{ doc("video_watched_75_percent") }}'
-      - name: viewer_comments
-        description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__ad
     description: Each record represents information about each ad.
@@ -122,42 +94,14 @@ models:
           - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
-      - name: comment_downvotes
-        description: '{{ doc("comment_downvotes") }}'
-      - name: comment_upvotes
-        description: '{{ doc("comment_upvotes") }}'
-      - name: comments_page_views
-        description: '{{ doc("comments_page_views") }}'
-      - name: conversion_roas
-        description: '{{ doc("conversion_roas") }}'
-      - name: cpc
-        description: '{{ doc("cpc") }}'
-      - name: ctr
-        description: '{{ doc("ctr") }}'
       - name: date_day
         description: '{{ doc("date") }}'
-      - name: ecpm
-        description: '{{ doc("ecpm") }}'
       - name: impressions
         description: '{{ doc("impressions") }}'
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
         description: Spend converted out of microcurrency (so Spend/1,000,000)
-      - name: video_started
-        description: '{{ doc("video_started") }}'
-      - name: video_watched_25_percent
-        description: '{{ doc("video_watched_25_percent") }}'
-      - name: video_watched_3_seconds
-        description: '{{ doc("video_watched_3_seconds") }}'
-      - name: video_watched_50_percent
-        description: '{{ doc("video_watched_50_percent") }}'
-      - name: video_watched_5_seconds
-        description: '{{ doc("video_watched_5_seconds") }}'
-      - name: video_watched_75_percent
-        description: '{{ doc("video_watched_75_percent") }}'
-      - name: viewer_comments
-        description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__ad_group
     description: Each record represents information about each ad group.
@@ -212,42 +156,14 @@ models:
           - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
-      - name: comment_downvotes
-        description: '{{ doc("comment_downvotes") }}'
-      - name: comment_upvotes
-        description: '{{ doc("comment_upvotes") }}'
-      - name: comments_page_views
-        description: '{{ doc("comments_page_views") }}'
-      - name: conversion_roas
-        description: '{{ doc("conversion_roas") }}'
-      - name: cpc
-        description: '{{ doc("cpc") }}'
-      - name: ctr
-        description: '{{ doc("ctr") }}'
       - name: date_day
         description: '{{ doc("date") }}'
-      - name: ecpm
-        description: '{{ doc("ecpm") }}'
       - name: impressions
         description: '{{ doc("impressions") }}'
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
         description: Spend converted out of microcurrency (so Spend/1,000,000)
-      - name: video_started
-        description: '{{ doc("video_started") }}'
-      - name: video_watched_25_percent
-        description: '{{ doc("video_watched_25_percent") }}'
-      - name: video_watched_3_seconds
-        description: '{{ doc("video_watched_3_seconds") }}'
-      - name: video_watched_50_percent
-        description: '{{ doc("video_watched_50_percent") }}'
-      - name: video_watched_5_seconds
-        description: '{{ doc("video_watched_5_seconds") }}'
-      - name: video_watched_75_percent
-        description: '{{ doc("video_watched_75_percent") }}'
-      - name: viewer_comments
-        description: '{{ doc("viewer_comments") }}'
 
   - name: stg_reddit_ads__campaign
     description: Each record represents information about each campaign.
@@ -288,39 +204,11 @@ models:
           - not_null
       - name: clicks
         description: '{{ doc("clicks") }}'
-      - name: comment_downvotes
-        description: '{{ doc("comment_downvotes") }}'
-      - name: comment_upvotes
-        description: '{{ doc("comment_upvotes") }}'
-      - name: comments_page_views
-        description: '{{ doc("comments_page_views") }}'
-      - name: conversion_roas
-        description: '{{ doc("conversion_roas") }}'
-      - name: cpc
-        description: '{{ doc("cpc") }}'
-      - name: ctr
-        description: '{{ doc("ctr") }}'
       - name: date_day
         description: '{{ doc("date") }}'
-      - name: ecpm
-        description: '{{ doc("ecpm") }}'
       - name: impressions
         description: '{{ doc("impressions") }}'
       - name: region
         description: '{{ doc("region") }}'
       - name: spend
         description: Spend converted out of microcurrency (so Spend/1,000,000)
-      - name: video_started
-        description: '{{ doc("video_started") }}'
-      - name: video_watched_25_percent
-        description: '{{ doc("video_watched_25_percent") }}'
-      - name: video_watched_3_seconds
-        description: '{{ doc("video_watched_3_seconds") }}'
-      - name: video_watched_50_percent
-        description: '{{ doc("video_watched_50_percent") }}'
-      - name: video_watched_5_seconds
-        description: '{{ doc("video_watched_5_seconds") }}'
-      - name: video_watched_75_percent
-        description: '{{ doc("video_watched_75_percent") }}'
-      - name: viewer_comments
-        description: '{{ doc("viewer_comments") }}'
