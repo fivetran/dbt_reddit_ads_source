@@ -33,6 +33,8 @@
 
 {% endif %}
 
+{{ fivetran_utils.add_pass_through_columns(columns, var('reddit_ads__ad_passthrough_metrics')) }}
+
 {{ return(columns) }}
 
 {% endmacro %}
