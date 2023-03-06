@@ -63,14 +63,14 @@ vars:
     reddit_ads__account_passthrough_metrics: 
       - name: "custom_field_1"
         alias: "custom_field"
+    reddit_ads__campaign_passthrough_metrics:
+      - name: "this_field"
     reddit_ads__ad_group_passthrough_metrics:
       - name: "unique_string_field"
     reddit_ads__ad_passthrough_metrics: 
       - name: "new_custom_field"
         alias: "custom_field"
       - name: "a_second_field"
-    reddit_ads__campaign_passthrough_metrics:
-      - name: "this_field"
 ```
 
 ### Change the build schema
