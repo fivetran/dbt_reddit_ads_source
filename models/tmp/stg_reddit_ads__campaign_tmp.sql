@@ -1,4 +1,16 @@
+ADD source_relation WHERE NEEDED + CHECK JOINS AND WINDOW FUNCTIONS! (Delete this line when done.)
+
 {{ config(enabled=var('ad_reporting__reddit_ads_enabled', True)) }}
 
-select *
-from {{ var('campaign') }}
+{{
+    fivetran_utils.union_data(
+        table_identifier='campaign', 
+        database_variable='reddit_ads_database', 
+        schema_variable='reddit_ads_schema', 
+        default_database=target.database,
+        default_schema='reddit_ads',
+        default_variable='campaign_source',
+        union_schema_variable='reddit_ads_union_schemas',
+        union_database_variable='reddit_ads_union_databases'
+    )
+}}

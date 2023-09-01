@@ -1,9 +1,12 @@
+UPDATE TESTS!!! (delete line when done.)
 version: 2
 
 models:
   - name: stg_reddit_ads__account
     description: Each record in this table represents information about an account.
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: account_id
         description: '{{ doc("account_id") }}'
         tests:
@@ -28,10 +31,13 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - account_id
             - date_day
     description: Each record represents a summary of events for each given date and account.
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: account_id
         description: '{{ doc("account_id") }}'
         tests:
@@ -50,6 +56,8 @@ models:
   - name: stg_reddit_ads__ad
     description: Each record represents information about each ad.
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: ad_id
         description: '{{ doc("ad_id") }}'
         tests:
@@ -82,10 +90,13 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - ad_id
             - date_day
     description: Each record represents a summary of events for each given date and ad.
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: ad_id
@@ -106,6 +117,8 @@ models:
   - name: stg_reddit_ads__ad_group
     description: Each record represents information about each ad group.
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: ad_group_id
         description: '{{ doc("ad_group_id") }}'
         tests:
@@ -144,10 +157,13 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - ad_group_id
             - date_day
     description: Each record represents a summary of events for each given date and ad group.
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: ad_group_id
@@ -168,6 +184,8 @@ models:
   - name: stg_reddit_ads__campaign
     description: Each record represents information about each campaign.
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: campaign_id
         description: '{{ doc("campaign_id") }}'
         tests:
@@ -192,10 +210,13 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - campaign_id
             - date_day
     description: Each record represents a summary of events for each given date and campaign.
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: account_id
         description: '{{ doc("account_id") }}'
       - name: campaign_id

@@ -204,3 +204,7 @@ Campaign level funding instrument id
 {% docs objective %}
 The objective type of a campaign.
 {% enddocs %}
+
+{% docs source_relation %}
+The source of the record if the unioning functionality is being used. If not this field will be empty.
+{% enddocs %}
