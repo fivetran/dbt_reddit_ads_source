@@ -7,7 +7,8 @@
 - Updated tmp models to union source data using the `fivetran_utils.union_data` macro. 
 - To distinguish which source each field comes from, added `source_relation` column in each staging model and applied the `fivetran_utils.source_relation` macro.
 - Updated tests to account for the new `source_relation` column.
-
+- Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job.
+- Updated the pull request [templates](/.github).
 # dbt_reddit_ads_source v0.1.0
 
 ## Initial Release
