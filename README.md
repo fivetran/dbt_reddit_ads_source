@@ -39,7 +39,7 @@ Include the following reddit_ads_source package version in your `packages.yml` f
 ```yaml
 packages:
   - package: fivetran/reddit_ads_source
-    version: [">=0.1.0", "<0.2.0"]
+    version: [">=0.2.0", "<0.3.0"]
 ```
 ## Step 3: Define database and schema variables
 By default, this package runs using your destination and the `reddit_ads` schema. If this is not where your Reddit Ads data is (for example, if your reddit_ads schema is named `reddit_ads_fivetran`), add the following configuration to your root `dbt_project.yml` file:

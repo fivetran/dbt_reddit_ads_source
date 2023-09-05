@@ -1,8 +1,12 @@
-UPDATE TESTS!!! (delete line when done.)
 version: 2
 
 models:
   - name: stg_reddit_ads__account
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - account_id
     description: Each record in this table represents information about an account.
     columns:
       - name: source_relation
@@ -10,7 +14,6 @@ models:
       - name: account_id
         description: '{{ doc("account_id") }}'
         tests:
-          - unique
           - not_null
       - name: attribution_type
         description: '{{ doc("attribution_type") }}'
@@ -54,6 +57,11 @@ models:
         description: Spend converted out of microcurrency (so Spend/1,000,000)
 
   - name: stg_reddit_ads__ad
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - ad_id
     description: Each record represents information about each ad.
     columns:
       - name: source_relation
@@ -61,7 +69,6 @@ models:
       - name: ad_id
         description: '{{ doc("ad_id") }}'
         tests:
-          - unique
           - not_null
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -115,6 +122,11 @@ models:
         description: Spend converted out of microcurrency (so Spend/1,000,000)
 
   - name: stg_reddit_ads__ad_group
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - ad_group_id
     description: Each record represents information about each ad group.
     columns:
       - name: source_relation
@@ -122,7 +134,6 @@ models:
       - name: ad_group_id
         description: '{{ doc("ad_group_id") }}'
         tests:
-          - unique
           - not_null
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -182,6 +193,11 @@ models:
         description: Spend converted out of microcurrency (so Spend/1,000,000)
 
   - name: stg_reddit_ads__campaign
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - campaign_id
     description: Each record represents information about each campaign.
     columns:
       - name: source_relation
@@ -189,7 +205,6 @@ models:
       - name: campaign_id
         description: '{{ doc("campaign_id") }}'
         tests:
-          - unique
           - not_null
       - name: account_id
         description: '{{ doc("account_id") }}'
