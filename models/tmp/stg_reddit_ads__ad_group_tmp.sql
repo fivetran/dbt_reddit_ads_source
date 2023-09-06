@@ -7,7 +7,7 @@
         schema_variable='reddit_ads_schema', 
         default_database=target.database,
         default_schema='reddit_ads',
-        default_variable='ad_group_source',
+        default_variable='ad_group',
         union_schema_variable='reddit_ads_union_schemas',
         union_database_variable='reddit_ads_union_databases'
     )
