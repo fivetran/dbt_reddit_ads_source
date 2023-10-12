@@ -15,12 +15,19 @@ fields as (
                 staging_columns=get_account_report_columns()
             )
         }}
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='reddit_ads_union_schemas', 
+            union_database_variable='reddit_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
-    
-    select 
+
+    select
+        source_relation, 
         account_id,
         clicks,
         date as date_day,

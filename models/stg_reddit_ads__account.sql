@@ -15,12 +15,19 @@ fields as (
                 staging_columns=get_account_columns()
             )
         }}
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='reddit_ads_union_schemas', 
+            union_database_variable='reddit_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
-    
-    select 
+
+    select
+        source_relation, 
         attribution_type,
         click_attribution_window,
         cast(created_at as {{ dbt.type_timestamp() }}) as created_at,
