@@ -248,8 +248,8 @@ models:
         description: '{{ doc("region") }}'
       - name: spend
         description: Spend converted out of microcurrency (so Spend/1,000,000)
-  - name: stg_reddit_ads_source__account_conversions_report
-    description: '{{ doc("stg_reddit_ads_source__account_conversions_report") }}'
+  - name: stg_reddit_ads__account_conversions_report
+    description: '{{ doc("stg_reddit_ads__account_conversions_report") }}'
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -290,8 +290,8 @@ models:
       - name: view_through_conversion_attribution_window_week
         description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
-  - name: stg_reddit_ads_source__ad_group_conversions_report
-    description: '{{ doc("stg_reddit_ads_source__ad_group_conversions_report") }}'
+  - name: stg_reddit_ads__ad_group_conversions_report
+    description: '{{ doc("stg_reddit_ads__ad_group_conversions_report") }}'
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -335,8 +335,8 @@ models:
       - name: view_through_conversion_attribution_window_week
         description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
-  - name: stg_reddit_ads_source__ad_conversions_report
-    description: '{{ doc("stg_reddit_ads_source__ad_conversions_report") }}'
+  - name: stg_reddit_ads__ad_conversions_report
+    description: '{{ doc("stg_reddit_ads__ad_conversions_report") }}'
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -380,8 +380,8 @@ models:
       - name: view_through_conversion_attribution_window_week
         description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
-  - name: stg_reddit_ads_source__campaign_conversions_report
-    description: '{{ doc("stg_reddit_ads_source__campaign_conversions_report") }}'
+  - name: stg_reddit_ads__campaign_conversions_report
+    description: '{{ doc("stg_reddit_ads__campaign_conversions_report") }}'
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'

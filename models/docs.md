@@ -208,3 +208,39 @@ The objective type of a campaign.
 {% docs source_relation %}
 The source of the record if the unioning functionality is being used. If not this field will be empty.
 {% enddocs %}
+
+{% docs account_conversions_report %} <insert description here> {% enddocs %}
+
+{% docs stg_reddit_ads__account_conversions_report %} <insert description here> {% enddocs %}
+
+{% docs avg_value %} <insert description here> {% enddocs %}
+
+{% docs click_through_conversion_attribution_window_day %} <insert description here> {% enddocs %}
+
+{% docs click_through_conversion_attribution_window_month %} <insert description here> {% enddocs %}
+
+{% docs click_through_conversion_attribution_window_week %} <insert description here> {% enddocs %}
+
+{% docs event_name %} <insert description here> {% enddocs %}
+
+{% docs total_items %} <insert description here> {% enddocs %}
+
+{% docs total_value %} <insert description here> {% enddocs %}
+
+{% docs view_through_conversion_attribution_window_day %} <insert description here> {% enddocs %}
+
+{% docs view_through_conversion_attribution_window_month %} <insert description here> {% enddocs %}
+
+{% docs view_through_conversion_attribution_window_week %} <insert description here> {% enddocs %}
+
+{% docs ad_group_conversions_report %} <insert description here> {% enddocs %}
+
+{% docs stg_reddit_ads__ad_group_conversions_report %} <insert description here> {% enddocs %}
+
+{% docs ad_conversions_report %} <insert description here> {% enddocs %}
+
+{% docs stg_reddit_ads__ad_conversions_report %} <insert description here> {% enddocs %}
+
+{% docs campaign_conversions_report %} <insert description here> {% enddocs %}
+
+{% docs stg_reddit_ads__campaign_conversions_report %} <insert description here> {% enddocs %}

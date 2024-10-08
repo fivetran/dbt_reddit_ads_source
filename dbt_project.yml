@@ -21,6 +21,10 @@ vars:
     ad_report: "{{ source('reddit_ads','ad_report') }}"
     campaign: "{{ source('reddit_ads','campaign') }}"
     campaign_report: "{{ source('reddit_ads', 'campaign_report') }}"
+    account_conversions_report: "{{ source('reddit_ads','account_conversions_report') }}"
+    ad_group_conversions_report: "{{ source('reddit_ads','ad_group_conversions_report') }}"
+    ad_conversions_report: "{{ source('reddit_ads','ad_conversions_report') }}"
+    campaign_conversions_report: "{{ source('reddit_ads','campaign_conversions_report') }}"
   reddit_ads__account_passthrough_metrics: []
   reddit_ads__ad_group_passthrough_metrics: []
   reddit_ads__ad_passthrough_metrics: []

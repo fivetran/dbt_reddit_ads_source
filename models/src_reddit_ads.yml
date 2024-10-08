@@ -323,7 +323,7 @@ sources:
             description: '{{ doc("viewer_comments") }}'
 
       - name: account_conversions_report
-        identifier: '{{ var("reddit_ads_source_account_conversions_report_identifier", "account_conversions_report") }}'
+        identifier: '{{ var("reddit_ads_account_conversions_report_identifier", "account_conversions_report") }}'
         description: '{{ doc("account_conversions_report") }}'
         columns:
           - name: account_id
@@ -354,7 +354,7 @@ sources:
             description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
       - name: ad_group_conversions_report
-        identifier: '{{ var("reddit_ads_source_ad_group_conversions_report_identifier", "ad_group_conversions_report") }}'
+        identifier: '{{ var("reddit_ads_ad_group_conversions_report_identifier", "ad_group_conversions_report") }}'
         description: '{{ doc("ad_group_conversions_report") }}'
         columns:
           - name: account_id
@@ -387,7 +387,7 @@ sources:
             description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
       - name: ad_conversions_report
-        identifier: '{{ var("reddit_ads_source_ad_conversions_report_identifier", "ad_conversions_report") }}'
+        identifier: '{{ var("reddit_ads_ad_conversions_report_identifier", "ad_conversions_report") }}'
         description: '{{ doc("ad_conversions_report") }}'
         columns:
           - name: account_id
@@ -420,7 +420,7 @@ sources:
             description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
       - name: campaign_conversions_report
-        identifier: '{{ var("reddit_ads_source_campaign_conversions_report_identifier", "campaign_conversions_report") }}'
+        identifier: '{{ var("reddit_ads_campaign_conversions_report_identifier", "campaign_conversions_report") }}'
         description: '{{ doc("campaign_conversions_report") }}'
         columns:
           - name: account_id
