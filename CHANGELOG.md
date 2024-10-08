@@ -1,3 +1,5 @@
+# dbt_reddit_ads_source v0.3.0
+
 # dbt_reddit_ads_source v0.2.0
 [PR #5](https://github.com/fivetran/dbt_reddit_ads_source/pull/5) includes the following updates:
 ## Feature update 🎉
