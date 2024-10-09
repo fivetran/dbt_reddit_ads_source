@@ -209,38 +209,58 @@ The objective type of a campaign.
 The source of the record if the unioning functionality is being used. If not this field will be empty.
 {% enddocs %}
 
-{% docs account_conversions_report %} <insert description here> {% enddocs %}
+{% docs account_conversions_report %}
+Provides a summary of conversion events at the account level, aggregating key metrics by event and day.
+{% enddocs %}
 
-{% docs stg_reddit_ads__account_conversions_report %} <insert description here> {% enddocs %}
+{% docs stg_reddit_ads__account_conversions_report %}
+Provides a summary of conversion events at the account level, aggregating key metrics by event and day such as view-through and click-through conversions.
+{% enddocs %}
 
-{% docs avg_value %} <insert description here> {% enddocs %}
+{% docs avg_value %}
+The average value of conversions over a given period.
+{% enddocs %}
 
-{% docs click_through_conversion_attribution_window_day %} <insert description here> {% enddocs %}
+{% docs click_through_conversion_attribution_window_month %}
 
-{% docs click_through_conversion_attribution_window_month %} <insert description here> {% enddocs %}
+{% enddocs %}
 
-{% docs click_through_conversion_attribution_window_week %} <insert description here> {% enddocs %}
+{% docs event_name %}
+The name of the conversion event or action being tracked, such as a purchase, form submission, or sign-up. This field categorizes different conversion types within the dataset.
+{% enddocs %}
 
-{% docs event_name %} <insert description here> {% enddocs %}
+{% docs total_items %}
+The total number of items involved in a conversion event. This is typically used in e-commerce reports to track the quantity of products sold during a conversion.
+{% enddocs %}
 
-{% docs total_items %} <insert description here> {% enddocs %}
+{% docs total_value %}
+The total monetary value associated with a conversion event.
+{% enddocs %}
 
-{% docs total_value %} <insert description here> {% enddocs %}
+{% docs view_through_conversion_attribution_window_month %}
 
-{% docs view_through_conversion_attribution_window_day %} <insert description here> {% enddocs %}
+{% enddocs %}
 
-{% docs view_through_conversion_attribution_window_month %} <insert description here> {% enddocs %}
+{% docs ad_group_conversions_report %}
+Provides a summary of conversion events at the ad group level, aggregating key metrics by event and day.
+{% enddocs %}
 
-{% docs view_through_conversion_attribution_window_week %} <insert description here> {% enddocs %}
+{% docs stg_reddit_ads__ad_group_conversions_report %}
+Provides a summary of conversion events at the ad group level, aggregating key metrics by event and day such as view-through and click-through conversions.
+{% enddocs %}
 
-{% docs ad_group_conversions_report %} <insert description here> {% enddocs %}
+{% docs ad_conversions_report %}
+Provides a summary of conversion events at the individual ad level, aggregating key metrics by event and day.
+{% enddocs %}
 
-{% docs stg_reddit_ads__ad_group_conversions_report %} <insert description here> {% enddocs %}
+{% docs stg_reddit_ads__ad_conversions_report %}
+Provides a summary of conversion events at the individual ad level, aggregating key metrics by event and day such as view-through and click-through conversions.
+{% enddocs %}
 
-{% docs ad_conversions_report %} <insert description here> {% enddocs %}
+{% docs campaign_conversions_report %}
+Provides a summary of conversion events at the campaign level, aggregating key metrics by event and day.
+{% enddocs %}
 
-{% docs stg_reddit_ads__ad_conversions_report %} <insert description here> {% enddocs %}
-
-{% docs campaign_conversions_report %} <insert description here> {% enddocs %}
-
-{% docs stg_reddit_ads__campaign_conversions_report %} <insert description here> {% enddocs %}
+{% docs stg_reddit_ads__campaign_conversions_report %}
+Provides a summary of conversion events at the campaign level, aggregating key metrics by event and day such as view-through and click-through conversions.
+{% enddocs %}
