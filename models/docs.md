@@ -222,7 +222,7 @@ The average value of conversions over a given period.
 {% enddocs %}
 
 {% docs click_through_conversion_attribution_window_month %}
-
+The total click-through conversions attributed, for the given month-long window.
 {% enddocs %}
 
 {% docs event_name %}
@@ -238,7 +238,7 @@ The total monetary value associated with a conversion event.
 {% enddocs %}
 
 {% docs view_through_conversion_attribution_window_month %}
-
+The total view-through conversions attributed, for the given month-long window.
 {% enddocs %}
 
 {% docs ad_group_conversions_report %}

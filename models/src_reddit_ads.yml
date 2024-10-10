@@ -336,22 +336,14 @@ sources:
             description: '{{ doc("_fivetran_synced") }}'
           - name: avg_value
             description: '{{ doc("avg_value") }}'
-          - name: click_through_conversion_attribution_window_day
-            description: '{{ doc("click_through_conversion_attribution_window_day") }}'
           - name: click_through_conversion_attribution_window_month
             description: '{{ doc("click_through_conversion_attribution_window_month") }}'
-          - name: click_through_conversion_attribution_window_week
-            description: '{{ doc("click_through_conversion_attribution_window_week") }}'
           - name: total_items
             description: '{{ doc("total_items") }}'
           - name: total_value
             description: '{{ doc("total_value") }}'
-          - name: view_through_conversion_attribution_window_day
-            description: '{{ doc("view_through_conversion_attribution_window_day") }}'
           - name: view_through_conversion_attribution_window_month
             description: '{{ doc("view_through_conversion_attribution_window_month") }}'
-          - name: view_through_conversion_attribution_window_week
-            description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
       - name: ad_group_conversions_report
         identifier: '{{ var("reddit_ads_ad_group_conversions_report_identifier", "ad_group_conversions_report") }}'
@@ -369,22 +361,14 @@ sources:
             description: '{{ doc("_fivetran_synced") }}'
           - name: avg_value
             description: '{{ doc("avg_value") }}'
-          - name: click_through_conversion_attribution_window_day
-            description: '{{ doc("click_through_conversion_attribution_window_day") }}'
           - name: click_through_conversion_attribution_window_month
             description: '{{ doc("click_through_conversion_attribution_window_month") }}'
-          - name: click_through_conversion_attribution_window_week
-            description: '{{ doc("click_through_conversion_attribution_window_week") }}'
           - name: total_items
             description: '{{ doc("total_items") }}'
           - name: total_value
             description: '{{ doc("total_value") }}'
-          - name: view_through_conversion_attribution_window_day
-            description: '{{ doc("view_through_conversion_attribution_window_day") }}'
           - name: view_through_conversion_attribution_window_month
             description: '{{ doc("view_through_conversion_attribution_window_month") }}'
-          - name: view_through_conversion_attribution_window_week
-            description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
       - name: ad_conversions_report
         identifier: '{{ var("reddit_ads_ad_conversions_report_identifier", "ad_conversions_report") }}'
@@ -402,22 +386,14 @@ sources:
             description: '{{ doc("_fivetran_synced") }}'
           - name: avg_value
             description: '{{ doc("avg_value") }}'
-          - name: click_through_conversion_attribution_window_day
-            description: '{{ doc("click_through_conversion_attribution_window_day") }}'
           - name: click_through_conversion_attribution_window_month
             description: '{{ doc("click_through_conversion_attribution_window_month") }}'
-          - name: click_through_conversion_attribution_window_week
-            description: '{{ doc("click_through_conversion_attribution_window_week") }}'
           - name: total_items
             description: '{{ doc("total_items") }}'
           - name: total_value
             description: '{{ doc("total_value") }}'
-          - name: view_through_conversion_attribution_window_day
-            description: '{{ doc("view_through_conversion_attribution_window_day") }}'
           - name: view_through_conversion_attribution_window_month
             description: '{{ doc("view_through_conversion_attribution_window_month") }}'
-          - name: view_through_conversion_attribution_window_week
-            description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 
       - name: campaign_conversions_report
         identifier: '{{ var("reddit_ads_campaign_conversions_report_identifier", "campaign_conversions_report") }}'
@@ -435,20 +411,12 @@ sources:
             description: '{{ doc("_fivetran_synced") }}'
           - name: avg_value
             description: '{{ doc("avg_value") }}'
-          - name: click_through_conversion_attribution_window_day
-            description: '{{ doc("click_through_conversion_attribution_window_day") }}'
           - name: click_through_conversion_attribution_window_month
             description: '{{ doc("click_through_conversion_attribution_window_month") }}'
-          - name: click_through_conversion_attribution_window_week
-            description: '{{ doc("click_through_conversion_attribution_window_week") }}'
           - name: total_items
             description: '{{ doc("total_items") }}'
           - name: total_value
             description: '{{ doc("total_value") }}'
-          - name: view_through_conversion_attribution_window_day
-            description: '{{ doc("view_through_conversion_attribution_window_day") }}'
           - name: view_through_conversion_attribution_window_month
             description: '{{ doc("view_through_conversion_attribution_window_month") }}'
-          - name: view_through_conversion_attribution_window_week
-            description: '{{ doc("view_through_conversion_attribution_window_week") }}'
 

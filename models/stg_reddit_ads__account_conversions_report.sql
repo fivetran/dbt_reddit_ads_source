@@ -28,7 +28,7 @@ final as (
         _fivetran_synced,
         account_id,
         avg_value,
-        click_through_conversion_attribution_window_month
+        click_through_conversion_attribution_window_month,
         date as date_day,
         event_name,
         total_items,
