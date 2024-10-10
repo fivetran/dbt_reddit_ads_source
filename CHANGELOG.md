@@ -1,4 +1,17 @@
 # dbt_reddit_ads_source v0.3.0
+[PR #7](https://github.com/fivetran/dbt_reddit_ads_source/pull/7) includes the following updates:
+
+## Feature: Conversion Metrics
+- Introduces 4 new staging models to bring in conversion metrics across different grains:
+  - `stg_reddit_ads__account_conversions_report`
+  - `stg_reddit_ads__ad_group_conversions_report`
+  - `stg_reddit_ads__ad_conversions_report`
+  - `stg_reddit_ads__campaign_conversions_report`
+- These models bring in conversions (click-through conversions) and view-through conversions for each day and respective grain.
+- We use the maximum attribution window when considering conversions and therefore source conversions metrics from the `click_through_conversion_attribution_window_month` and `view_through_conversion_attribution_window_month` fields. You may bring in additional windows and fields through the `stg_<>_conversions_report` models via the `<>_conversions_passthrough_metrics` variable. For information on how to configure these variables, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/blob/main/README.md#passing-through-additional-metrics).
+
+## Under the hood
+- Added the respective seed data for the new models in addition to updating relevant documentation. 
 
 # dbt_reddit_ads_source v0.2.0
 [PR #5](https://github.com/fivetran/dbt_reddit_ads_source/pull/5) includes the following updates:
