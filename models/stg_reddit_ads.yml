@@ -266,7 +266,7 @@ models:
       - name: avg_value
         description: '{{ doc("avg_value") }}'
 
-      - name: click_through_conversion_attribution_window_month
+      - name: conversions
         description: '{{ doc("click_through_conversion_attribution_window_month") }}'
 
       - name: total_items
@@ -275,7 +275,7 @@ models:
       - name: total_value
         description: '{{ doc("total_value") }}'
 
-      - name: view_through_conversion_attribution_window_month
+      - name: view_through_conversions
         description: '{{ doc("view_through_conversion_attribution_window_month") }}'
 
   - name: stg_reddit_ads__ad_group_conversions_report
@@ -299,7 +299,7 @@ models:
       - name: avg_value
         description: '{{ doc("avg_value") }}'
 
-      - name: click_through_conversion_attribution_window_month
+      - name: conversions
         description: '{{ doc("click_through_conversion_attribution_window_month") }}'
 
       - name: total_items
@@ -308,7 +308,7 @@ models:
       - name: total_value
         description: '{{ doc("total_value") }}'
 
-      - name: view_through_conversion_attribution_window_month
+      - name: view_through_conversions
         description: '{{ doc("view_through_conversion_attribution_window_month") }}'
 
   - name: stg_reddit_ads__ad_conversions_report
@@ -332,7 +332,7 @@ models:
       - name: avg_value
         description: '{{ doc("avg_value") }}'
 
-      - name: click_through_conversion_attribution_window_month
+      - name: conversions
         description: '{{ doc("click_through_conversion_attribution_window_month") }}'
 
       - name: total_items
@@ -341,7 +341,7 @@ models:
       - name: total_value
         description: '{{ doc("total_value") }}'
 
-      - name: view_through_conversion_attribution_window_month
+      - name: view_through_conversions
         description: '{{ doc("view_through_conversion_attribution_window_month") }}'
 
   - name: stg_reddit_ads__campaign_conversions_report
@@ -365,7 +365,7 @@ models:
       - name: avg_value
         description: '{{ doc("avg_value") }}'
 
-      - name: click_through_conversion_attribution_window_month
+      - name: conversions
         description: '{{ doc("click_through_conversion_attribution_window_month") }}'
 
       - name: total_items
@@ -374,6 +374,6 @@ models:
       - name: total_value
         description: '{{ doc("total_value") }}'
 
-      - name: view_through_conversion_attribution_window_month
+      - name: view_through_conversions
         description: '{{ doc("view_through_conversion_attribution_window_month") }}'
 
