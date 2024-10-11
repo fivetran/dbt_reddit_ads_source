@@ -1,3 +1,4 @@
+{{ config(enabled=var('ad_reporting__reddit_ads_enabled', True)) }}
 
 with base as (
 
