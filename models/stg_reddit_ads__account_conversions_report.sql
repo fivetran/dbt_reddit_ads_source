@@ -29,11 +29,11 @@ final as (
         _fivetran_synced,
         account_id,
         avg_value,
-        click_through_conversion_attribution_window_month as conversions,
         date as date_day,
         event_name,
         total_items,
         total_value,
+        click_through_conversion_attribution_window_month as conversions,
         view_through_conversion_attribution_window_month as view_through_conversions
         
         {{ fivetran_utils.fill_pass_through_columns('reddit_ads__account_conversions_passthrough_metrics') }}
