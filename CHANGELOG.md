@@ -11,7 +11,8 @@
 - We use the maximum attribution window when considering conversions and therefore retrieve conversions metrics from the `click_through_conversion_attribution_window_month` and `view_through_conversion_attribution_window_month` fields in the respective source tables. You may bring in additional windows and fields through the `stg_<>_conversions_report` models via the `<>_conversions_passthrough_metrics` variable. For information on how to configure these variables, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/blob/main/README.md#passing-through-additional-metrics).
 
 ## Under the hood
-- Added the respective seed data for the new models in addition to updating relevant documentation. 
+- Added the respective seed data for the new models in addition to updating relevant documentation.
+- Added documentation explaining potential discrepancies across reporting grains.
 
 # dbt_reddit_ads_source v0.2.0
 [PR #5](https://github.com/fivetran/dbt_reddit_ads_source/pull/5) includes the following updates:
