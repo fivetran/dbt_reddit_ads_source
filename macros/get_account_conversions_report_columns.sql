@@ -7,7 +7,7 @@
     {"name": "click_through_conversion_attribution_window_day", "datatype": dbt.type_int()},
     {"name": "click_through_conversion_attribution_window_month", "datatype": dbt.type_int()},
     {"name": "click_through_conversion_attribution_window_week", "datatype": dbt.type_int()},
-    {"name": "date", "datatype": dbt.type_timestamp()},
+    {"name": "date", "datatype": "date"},
     {"name": "event_name", "datatype": dbt.type_string()},
     {"name": "total_items", "datatype": dbt.type_int()},
     {"name": "total_value", "datatype": dbt.type_int()},
