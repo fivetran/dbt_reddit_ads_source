@@ -28,13 +28,13 @@ final as (
         source_relation, 
         _fivetran_synced,
         account_id,
-        avg_value,
+        coalesce(avg_value,0) as avg_value,
         date as date_day,
         event_name,
-        total_items,
-        total_value,
-        click_through_conversion_attribution_window_month as conversions,
-        view_through_conversion_attribution_window_month as view_through_conversions
+        coalesce(total_items,0) as total_items,
+        coalesce(total_value,0) as total_value,
+        coalesce(click_through_conversion_attribution_window_month,0) as conversions,
+        coalesce(view_through_conversion_attribution_window_month,0) as view_through_conversions
         
         {{ fivetran_utils.fill_pass_through_columns('reddit_ads__account_conversions_passthrough_metrics') }}
     from fields
