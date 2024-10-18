@@ -225,6 +225,14 @@ The average value of conversions over a given period.
 The total click-through conversions attributed, for the given month-long window.
 {% enddocs %}
 
+{% docs click_through_conversion_attribution_window_day %}
+The total click-through conversions attributed, for the given day-long window. Not included by the package by default.
+{% enddocs %}
+
+{% docs click_through_conversion_attribution_window_week %}
+The total click-through conversions attributed, for the given week-long window. Not included by the package by default.
+{% enddocs %}
+
 {% docs event_name %}
 The name of the conversion event or action being tracked, such as a purchase, form submission, or sign-up. This field categorizes different conversion types within the dataset.
 {% enddocs %}
@@ -239,6 +247,14 @@ The total monetary value associated with a conversion event.
 
 {% docs view_through_conversion_attribution_window_month %}
 The total view-through conversions attributed, for the given month-long window.
+{% enddocs %}
+
+{% docs view_through_conversion_attribution_window_day %}
+The total click-through conversions attributed, for the given day-long window. Not included by the package by default.
+{% enddocs %}
+
+{% docs view_through_conversion_attribution_window_week %}
+The total click-through conversions attributed, for the given week-long window. Not included by the package by default.
 {% enddocs %}
 
 {% docs ad_group_conversions_report %}

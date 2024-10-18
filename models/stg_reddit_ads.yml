@@ -263,9 +263,6 @@ models:
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
-      - name: avg_value
-        description: '{{ doc("avg_value") }}'
-
       - name: conversions
         description: '{{ doc("click_through_conversion_attribution_window_month") }}'
 
@@ -295,9 +292,6 @@ models:
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
-
-      - name: avg_value
-        description: '{{ doc("avg_value") }}'
 
       - name: conversions
         description: '{{ doc("click_through_conversion_attribution_window_month") }}'
@@ -329,9 +323,6 @@ models:
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
-      - name: avg_value
-        description: '{{ doc("avg_value") }}'
-
       - name: conversions
         description: '{{ doc("click_through_conversion_attribution_window_month") }}'
 
@@ -361,9 +352,6 @@ models:
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
-
-      - name: avg_value
-        description: '{{ doc("avg_value") }}'
 
       - name: conversions
         description: '{{ doc("click_through_conversion_attribution_window_month") }}'
