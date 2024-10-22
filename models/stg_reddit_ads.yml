@@ -250,6 +250,13 @@ models:
         description: Spend converted out of microcurrency (so Spend/1,000,000)
   - name: stg_reddit_ads__account_conversions_report
     description: '{{ doc("stg_reddit_ads__account_conversions_report") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - account_id
+            - date_day
+            - event_name
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -275,8 +282,18 @@ models:
       - name: view_through_conversions
         description: '{{ doc("view_through_conversion_attribution_window_month") }}'
 
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+
   - name: stg_reddit_ads__ad_group_conversions_report
     description: '{{ doc("stg_reddit_ads__ad_group_conversions_report") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - ad_group_id
+            - date_day
+            - event_name
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -305,8 +322,18 @@ models:
       - name: view_through_conversions
         description: '{{ doc("view_through_conversion_attribution_window_month") }}'
 
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+
   - name: stg_reddit_ads__ad_conversions_report
     description: '{{ doc("stg_reddit_ads__ad_conversions_report") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - ad_id
+            - date_day
+            - event_name
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -335,8 +362,18 @@ models:
       - name: view_through_conversions
         description: '{{ doc("view_through_conversion_attribution_window_month") }}'
 
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+
   - name: stg_reddit_ads__campaign_conversions_report
     description: '{{ doc("stg_reddit_ads__campaign_conversions_report") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - campaign_id
+            - date_day
+            - event_name
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
@@ -365,3 +402,5 @@ models:
       - name: view_through_conversions
         description: '{{ doc("view_through_conversion_attribution_window_month") }}'
 
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
