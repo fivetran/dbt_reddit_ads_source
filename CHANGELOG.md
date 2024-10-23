@@ -15,6 +15,9 @@
 - Added the respective seed data for the new models in addition to updating relevant documentation.
 - Added documentation explaining potential discrepancies across reporting grains.
 
+## Contributors
+- [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation)
+
 # dbt_reddit_ads_source v0.2.0
 [PR #5](https://github.com/fivetran/dbt_reddit_ads_source/pull/5) includes the following updates:
 ## Feature update 🎉
