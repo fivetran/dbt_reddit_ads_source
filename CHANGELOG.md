@@ -1,5 +1,5 @@
 # dbt_reddit_ads_source v0.3.0
-[PR #7](https://github.com/fivetran/dbt_reddit_ads_source/pull/7) includes the following updates:
+[PR #7](https://github.com/fivetran/dbt_reddit_ads_source/pull/7) includes the following **BREAKING CHANGE** updates:
 
 ## Feature: Conversion Metrics
 - Introduces 4 new staging models to bring in conversion metrics across different dimensions:
@@ -8,12 +8,12 @@
   - `stg_reddit_ads__ad_conversions_report`
   - `stg_reddit_ads__campaign_conversions_report`
 - These models bring in conversions (click-through conversions) and view-through conversions, in addition to the total items and total value associated with conversions.
-- We use the maximum attribution window when considering conversions and therefore retrieve conversions metrics from the `click_through_conversion_attribution_window_month` and `view_through_conversion_attribution_window_month` fields in the respective source tables. You may bring in additional windows and fields through the `stg_<entity>_conversions_report` models via the `<entity>_conversions_passthrough_metrics` variables. For information on how to configure these variables, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/blob/main/README.md#passing-through-additional-metrics).
+- We use the maximum attribution window when considering conversions and therefore retrieve conversions metrics from the `click_through_conversion_attribution_window_month` and `view_through_conversion_attribution_window_month` fields in the respective source tables. You may bring in additional windows and fields from the `stg_<entity>_conversions_report` models via the `<entity>_conversions_passthrough_metrics` variables. For information on how to configure these variables, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/blob/main/README.md#passing-through-additional-metrics).
 
 ## Under the hood
-- Coalesced each pre-existing metric (ie `clicks`, `impressions`, and `spend`) with `0` to avoid the complications of `null` in downstream aggregations.
-- Added the respective seed data for the new models in addition to updating relevant documentation.
-- Added documentation explaining potential discrepancies across reporting grains.
+- Coalesces each pre-existing metric (ie `clicks`, `impressions`, and `spend`) with `0` to avoid the complications of `null` in downstream aggregations.
+- Adds the respective seed data for the new models in addition to updating relevant documentation.
+- Adds documentation explaining potential discrepancies across reporting grains.
 
 ## Contributors
 - [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation)
