@@ -321,3 +321,133 @@ sources:
             description: '{{ doc("video_watched_75_percent") }}'
           - name: viewer_comments
             description: '{{ doc("viewer_comments") }}'
+
+      - name: account_conversions_report
+        identifier: '{{ var("reddit_ads_account_conversions_report_identifier", "account_conversions_report") }}'
+        description: '{{ doc("account_conversions_report") }}'
+        columns:
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: event_name
+            description: '{{ doc("event_name") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: avg_value
+            description: '{{ doc("avg_value") }}'
+          - name: click_through_conversion_attribution_window_month
+            description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+          - name: total_items
+            description: '{{ doc("total_items") }}'
+          - name: total_value
+            description: '{{ doc("total_value") }}'
+          - name: view_through_conversion_attribution_window_month
+            description: '{{ doc("view_through_conversion_attribution_window_month") }}'
+          - name: click_through_conversion_attribution_window_day
+            description: '{{ doc("click_through_conversion_attribution_window_day") }}'
+          - name: click_through_conversion_attribution_window_week
+            description: '{{ doc("click_through_conversion_attribution_window_week") }}'
+          - name: view_through_conversion_attribution_window_day
+            description: '{{ doc("view_through_conversion_attribution_window_day") }}'
+          - name: view_through_conversion_attribution_window_week
+            description: '{{ doc("view_through_conversion_attribution_window_week") }}'
+            
+      - name: ad_group_conversions_report
+        identifier: '{{ var("reddit_ads_ad_group_conversions_report_identifier", "ad_group_conversions_report") }}'
+        description: '{{ doc("ad_group_conversions_report") }}'
+        columns:
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: ad_group_id
+            description: '{{ doc("ad_group_id") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: event_name
+            description: '{{ doc("event_name") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: avg_value
+            description: '{{ doc("avg_value") }}'
+          - name: click_through_conversion_attribution_window_month
+            description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+          - name: total_items
+            description: '{{ doc("total_items") }}'
+          - name: total_value
+            description: '{{ doc("total_value") }}'
+          - name: view_through_conversion_attribution_window_month
+            description: '{{ doc("view_through_conversion_attribution_window_month") }}'
+          - name: click_through_conversion_attribution_window_day
+            description: '{{ doc("click_through_conversion_attribution_window_day") }}'
+          - name: click_through_conversion_attribution_window_week
+            description: '{{ doc("click_through_conversion_attribution_window_week") }}'
+          - name: view_through_conversion_attribution_window_day
+            description: '{{ doc("view_through_conversion_attribution_window_day") }}'
+          - name: view_through_conversion_attribution_window_week
+            description: '{{ doc("view_through_conversion_attribution_window_week") }}'
+
+      - name: ad_conversions_report
+        identifier: '{{ var("reddit_ads_ad_conversions_report_identifier", "ad_conversions_report") }}'
+        description: '{{ doc("ad_conversions_report") }}'
+        columns:
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: ad_id
+            description: '{{ doc("ad_id") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: event_name
+            description: '{{ doc("event_name") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: avg_value
+            description: '{{ doc("avg_value") }}'
+          - name: click_through_conversion_attribution_window_month
+            description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+          - name: total_items
+            description: '{{ doc("total_items") }}'
+          - name: total_value
+            description: '{{ doc("total_value") }}'
+          - name: view_through_conversion_attribution_window_month
+            description: '{{ doc("view_through_conversion_attribution_window_month") }}'
+          - name: click_through_conversion_attribution_window_day
+            description: '{{ doc("click_through_conversion_attribution_window_day") }}'
+          - name: click_through_conversion_attribution_window_week
+            description: '{{ doc("click_through_conversion_attribution_window_week") }}'
+          - name: view_through_conversion_attribution_window_day
+            description: '{{ doc("view_through_conversion_attribution_window_day") }}'
+          - name: view_through_conversion_attribution_window_week
+            description: '{{ doc("view_through_conversion_attribution_window_week") }}'
+
+      - name: campaign_conversions_report
+        identifier: '{{ var("reddit_ads_campaign_conversions_report_identifier", "campaign_conversions_report") }}'
+        description: '{{ doc("campaign_conversions_report") }}'
+        columns:
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: campaign_id
+            description: '{{ doc("campaign_id") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: event_name
+            description: '{{ doc("event_name") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: avg_value
+            description: '{{ doc("avg_value") }}'
+          - name: click_through_conversion_attribution_window_month
+            description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+          - name: total_items
+            description: '{{ doc("total_items") }}'
+          - name: total_value
+            description: '{{ doc("total_value") }}'
+          - name: view_through_conversion_attribution_window_month
+            description: '{{ doc("view_through_conversion_attribution_window_month") }}'
+          - name: click_through_conversion_attribution_window_day
+            description: '{{ doc("click_through_conversion_attribution_window_day") }}'
+          - name: click_through_conversion_attribution_window_week
+            description: '{{ doc("click_through_conversion_attribution_window_week") }}'
+          - name: view_through_conversion_attribution_window_day
+            description: '{{ doc("view_through_conversion_attribution_window_day") }}'
+          - name: view_through_conversion_attribution_window_week
+            description: '{{ doc("view_through_conversion_attribution_window_week") }}'

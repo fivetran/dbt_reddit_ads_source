@@ -27,14 +27,14 @@ fields as (
 final as (
 
     select
-        source_relation, 
+        source_relation,
         account_id,
         ad_group_id,
-        clicks,
+        coalesce(clicks,0) as clicks,
         date as date_day,
-        impressions,
+        coalesce(impressions,0) as impressions,
         region,
-        (spend/1000000) as spend
+        coalesce((spend/1000000),0) as spend
         
         {{ fivetran_utils.fill_pass_through_columns('reddit_ads__ad_group_passthrough_metrics') }}
     from fields

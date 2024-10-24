@@ -248,3 +248,159 @@ models:
         description: '{{ doc("region") }}'
       - name: spend
         description: Spend converted out of microcurrency (so Spend/1,000,000)
+  - name: stg_reddit_ads__account_conversions_report
+    description: '{{ doc("stg_reddit_ads__account_conversions_report") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - account_id
+            - date_day
+            - event_name
+    columns:
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+
+      - name: date_day
+        description: '{{ doc("date") }}'
+
+      - name: event_name
+        description: '{{ doc("event_name") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: conversions
+        description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+
+      - name: total_items
+        description: '{{ doc("total_items") }}'
+
+      - name: total_value
+        description: '{{ doc("total_value") }}'
+
+      - name: view_through_conversions
+        description: '{{ doc("view_through_conversion_attribution_window_month") }}'
+
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+
+  - name: stg_reddit_ads__ad_group_conversions_report
+    description: '{{ doc("stg_reddit_ads__ad_group_conversions_report") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - ad_group_id
+            - date_day
+            - event_name
+    columns:
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+
+      - name: ad_group_id
+        description: '{{ doc("ad_group_id") }}'
+
+      - name: date_day
+        description: '{{ doc("date") }}'
+
+      - name: event_name
+        description: '{{ doc("event_name") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: conversions
+        description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+
+      - name: total_items
+        description: '{{ doc("total_items") }}'
+
+      - name: total_value
+        description: '{{ doc("total_value") }}'
+
+      - name: view_through_conversions
+        description: '{{ doc("view_through_conversion_attribution_window_month") }}'
+
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+
+  - name: stg_reddit_ads__ad_conversions_report
+    description: '{{ doc("stg_reddit_ads__ad_conversions_report") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - ad_id
+            - date_day
+            - event_name
+    columns:
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+
+      - name: ad_id
+        description: '{{ doc("ad_id") }}'
+
+      - name: date_day
+        description: '{{ doc("date") }}'
+
+      - name: event_name
+        description: '{{ doc("event_name") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: conversions
+        description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+
+      - name: total_items
+        description: '{{ doc("total_items") }}'
+
+      - name: total_value
+        description: '{{ doc("total_value") }}'
+
+      - name: view_through_conversions
+        description: '{{ doc("view_through_conversion_attribution_window_month") }}'
+
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+
+  - name: stg_reddit_ads__campaign_conversions_report
+    description: '{{ doc("stg_reddit_ads__campaign_conversions_report") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - campaign_id
+            - date_day
+            - event_name
+    columns:
+      - name: account_id
+        description: '{{ doc("account_id") }}'
+
+      - name: campaign_id
+        description: '{{ doc("campaign_id") }}'
+
+      - name: date_day
+        description: '{{ doc("date") }}'
+
+      - name: event_name
+        description: '{{ doc("event_name") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: conversions
+        description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+
+      - name: total_items
+        description: '{{ doc("total_items") }}'
+
+      - name: total_value
+        description: '{{ doc("total_value") }}'
+
+      - name: view_through_conversions
+        description: '{{ doc("view_through_conversion_attribution_window_month") }}'
+
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
