@@ -3,7 +3,7 @@
 with base as (
 
     select * 
-    from {{ ref('stg_reddit_ads__campaign_conversions_report_base') }}
+    from {{ ref('stg_reddit_ads__campaign_conversions_report_tmp') }}
 ),
 
 fields as (
@@ -11,7 +11,7 @@ fields as (
     select
         {{
             fivetran_utils.fill_staging_columns(
-                source_columns=adapter.get_columns_in_relation(ref('stg_reddit_ads__campaign_conversions_report_base')),
+                source_columns=adapter.get_columns_in_relation(ref('stg_reddit_ads__campaign_conversions_report_tmp')),
                 staging_columns=get_campaign_conversions_report_columns()
             )
         }}

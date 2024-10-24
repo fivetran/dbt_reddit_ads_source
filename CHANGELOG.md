@@ -2,16 +2,17 @@
 [PR #7](https://github.com/fivetran/dbt_reddit_ads_source/pull/7) includes the following **BREAKING CHANGE** updates:
 
 ## Feature: Conversion Metrics
-- Introduces 4 new staging models to bring in conversion metrics across different dimensions:
+- Introduces 4 new staging models to bring in conversion metrics (click-through conversions, view-through conversions, total value, and total items) across different dimensions:
   - `stg_reddit_ads__account_conversions_report`
   - `stg_reddit_ads__ad_group_conversions_report`
   - `stg_reddit_ads__ad_conversions_report`
   - `stg_reddit_ads__campaign_conversions_report`
-- These models bring in conversions (click-through conversions) and view-through conversions, in addition to the total items and total value associated with conversions.
-- We use the maximum attribution window when considering conversions and therefore retrieve conversions metrics from the `click_through_conversion_attribution_window_month` and `view_through_conversion_attribution_window_month` fields from the respective source tables. You may bring in additional windows and fields from the `stg_<entity>_conversions_report` models via the `<entity>_conversions_passthrough_metrics` variables. For information on how to configure these variables, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source?tab=readme-ov-file#passing-through-additional-metrics).
+> Note: If you would like to include conversion metrics, please ensure you have the `account_conversions_report`, `ad_group_conversions_report`, `ad_conversions_report`, and `campaign_conversions_report` source tables syncing in your Reddit Ads connector(s). Otherwise, the package will run successfully but produce `null` conversion metric values.
+
+- Introduces the `<entity>_conversions_passthrough_metrics` variables to allow additional fields from the source `*_conversion_report` tables. We use the maximum attribution window when considering conversions and therefore retrieve conversions metrics from the `click_through_conversion_attribution_window_month` (conversions) and `view_through_conversion_attribution_window_month` (view_through_conversions) fields from the respective source tables. For information on how to configure these variables to bring in additional windows and fields into the `stg_<entity>_conversions_report` models, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics).
 
 ## Under the hood
-- Coalesces each pre-existing metric (ie `clicks`, `impressions`, and `spend`) with `0` to avoid the complications of `null` in downstream aggregations.
+- Coalesces each pre-existing metrics (ie `clicks`, `impressions`, and `spend`) with `0` to avoid the complications of `null` in downstream aggregations.
 - Adds the respective seed data for the new models in addition to updating relevant documentation.
 - Adds documentation explaining potential discrepancies across reporting grains.
 
