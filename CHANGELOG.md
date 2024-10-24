@@ -8,7 +8,7 @@
   - `stg_reddit_ads__ad_conversions_report`
   - `stg_reddit_ads__campaign_conversions_report`
 - These models bring in conversions (click-through conversions) and view-through conversions, in addition to the total items and total value associated with conversions.
-- We use the maximum attribution window when considering conversions and therefore retrieve conversions metrics from the `click_through_conversion_attribution_window_month` and `view_through_conversion_attribution_window_month` fields in the respective source tables. You may bring in additional windows and fields from the `stg_<entity>_conversions_report` models via the `<entity>_conversions_passthrough_metrics` variables. For information on how to configure these variables, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/blob/main/README.md#passing-through-additional-metrics).
+- We use the maximum attribution window when considering conversions and therefore retrieve conversions metrics from the `click_through_conversion_attribution_window_month` and `view_through_conversion_attribution_window_month` fields from the respective source tables. You may bring in additional windows and fields from the `stg_<entity>_conversions_report` models via the `<entity>_conversions_passthrough_metrics` variables. For information on how to configure these variables, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source?tab=readme-ov-file#passing-through-additional-metrics).
 
 ## Under the hood
 - Coalesces each pre-existing metric (ie `clicks`, `impressions`, and `spend`) with `0` to avoid the complications of `null` in downstream aggregations.
