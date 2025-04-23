@@ -1,4 +1,10 @@
-# dbt_reddit_ads_source version.version
+# dbt_reddit_ads_source v0.4.0
+[PR #10](https://github.com/fivetran/dbt_reddit_ads_source/pull/10) includes the following updates:
+
+## Features
+- Added:
+  - `CAMPAIGN_COUNTRY_REPORT`
+  - `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT`
 
 ## Documentation
 - Corrected references to connectors and connections in the README. ([#9](https://github.com/fivetran/dbt_reddit_ads_source/pull/9))

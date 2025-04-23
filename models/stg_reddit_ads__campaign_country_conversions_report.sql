@@ -2,7 +2,7 @@
 with base as (
 
     select * 
-    from {{ ref('stg_reddit_ads__campaign_country_conversions_report_base') }}
+    from {{ ref('stg_reddit_ads__campaign_country_conversions_report_tmp') }}
 ),
 
 fields as (
@@ -10,7 +10,7 @@ fields as (
     select
         {{
             fivetran_utils.fill_staging_columns(
-                source_columns=adapter.get_columns_in_relation(ref('stg_reddit_ads__campaign_country_conversions_report_base')),
+                source_columns=adapter.get_columns_in_relation(ref('stg_reddit_ads__campaign_country_conversions_report_tmp')),
                 staging_columns=get_campaign_country_conversions_report_columns()
             )
         }}
@@ -24,22 +24,22 @@ fields as (
 final as (
     
     select 
-        source_relation, 
-        _fivetran_synced,
+        source_relation,
+        date as date_day,
         account_id,
-        avg_value,
         campaign_id,
+        country,
+        avg_value,
         click_through_conversion_attribution_window_day,
         click_through_conversion_attribution_window_month,
         click_through_conversion_attribution_window_week,
-        country,
-        date,
         event_name,
         total_items,
         total_value,
         view_through_conversion_attribution_window_day,
         view_through_conversion_attribution_window_month,
-        view_through_conversion_attribution_window_week
+        view_through_conversion_attribution_window_week,
+        _fivetran_synced
     from fields
 )
 

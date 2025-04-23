@@ -2,7 +2,7 @@
 with base as (
 
     select * 
-    from {{ ref('stg_reddit_ads__campaign_country_report_base') }}
+    from {{ ref('stg_reddit_ads__campaign_country_report_tmp') }}
 ),
 
 fields as (
@@ -10,7 +10,7 @@ fields as (
     select
         {{
             fivetran_utils.fill_staging_columns(
-                source_columns=adapter.get_columns_in_relation(ref('stg_reddit_ads__campaign_country_report_base')),
+                source_columns=adapter.get_columns_in_relation(ref('stg_reddit_ads__campaign_country_report_tmp')),
                 staging_columns=get_campaign_country_report_columns()
             )
         }}
@@ -25,8 +25,10 @@ final as (
     
     select 
         source_relation, 
-        _fivetran_synced,
+        date as date_day,
         account_id,
+        campaign_id,
+        country,
         app_install_metrics_add_payment_info,
         app_install_metrics_add_to_cart,
         app_install_metrics_app_launch,
@@ -39,16 +41,13 @@ final as (
         app_install_metrics_spend,
         app_install_metrics_spend_credits,
         app_install_metrics_view_content,
-        campaign_id,
         clicks,
         comment_downvotes,
         comment_upvotes,
         comments_page_views,
         conversion_roas,
-        country,
         cpc,
         ctr,
-        date,
         ecpm,
         gallery_item_caption,
         gallery_item_id,
@@ -76,7 +75,8 @@ final as (
         video_watched_75_percent,
         video_watched_95_percent,
         viewable_impressions,
-        viewer_comments
+        viewer_comments,
+        _fivetran_synced
     from fields
 )
 
