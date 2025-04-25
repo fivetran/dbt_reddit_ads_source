@@ -1,4 +1,4 @@
-{{ config(enabled=var('ad_reporting__reddit_ads_enabled', True)) }}
+{{ config(enabled=var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads_campaign_country_conversions_report_enabled', True)) }}
 
 {{
     fivetran_utils.union_data(

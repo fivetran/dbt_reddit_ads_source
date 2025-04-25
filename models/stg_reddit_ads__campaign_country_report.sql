@@ -1,3 +1,4 @@
+{{ config(enabled=var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads_campaign_country_report_enabled', True)) }}
 
 with base as (
 
@@ -24,59 +25,16 @@ fields as (
 final as (
     
     select 
-        source_relation, 
-        date as date_day,
+        source_relation,
+        _fivetran_synced,
         account_id,
         campaign_id,
         country,
-        app_install_metrics_add_payment_info,
-        app_install_metrics_add_to_cart,
-        app_install_metrics_app_launch,
-        app_install_metrics_completed_tutorial,
-        app_install_metrics_install,
-        app_install_metrics_level_achieved,
-        app_install_metrics_purchase,
-        app_install_metrics_search,
-        app_install_metrics_sign_up,
-        app_install_metrics_spend,
-        app_install_metrics_spend_credits,
-        app_install_metrics_view_content,
-        clicks,
-        comment_downvotes,
-        comment_upvotes,
-        comments_page_views,
-        conversion_roas,
-        cpc,
-        ctr,
-        ecpm,
-        gallery_item_caption,
-        gallery_item_id,
-        impressions,
-        legacy_click_conversions_attribution_window_day,
-        legacy_click_conversions_attribution_window_month,
-        legacy_click_conversions_attribution_window_week,
-        legacy_view_conversions_attribution_window_day,
-        legacy_view_conversions_attribution_window_month,
-        legacy_view_conversions_attribution_window_week,
-        priority,
+        date as date_day,
+        coalesce(clicks,0) as clicks,
+        coalesce(impressions,0) as impressions,
         region,
-        spend,
-        video_fully_viewable_impressions,
-        video_plays_expanded,
-        video_plays_with_sound,
-        video_started,
-        video_viewable_impressions,
-        video_watched_100_percent,
-        video_watched_10_seconds,
-        video_watched_25_percent,
-        video_watched_3_seconds,
-        video_watched_50_percent,
-        video_watched_5_seconds,
-        video_watched_75_percent,
-        video_watched_95_percent,
-        viewable_impressions,
-        viewer_comments,
-        _fivetran_synced
+        coalesce((spend/1000000),0) as spend
     from fields
 )
 

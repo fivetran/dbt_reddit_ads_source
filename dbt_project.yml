@@ -28,10 +28,12 @@ vars:
     campaign_country_report: "{{ source('reddit_ads','campaign_country_report') }}"
     campaign_country_conversions_report: "{{ source('reddit_ads','campaign_country_conversions_report') }}"
   reddit_ads__account_passthrough_metrics: []
-  reddit_ads__ad_group_passthrough_metrics: []
-  reddit_ads__ad_passthrough_metrics: []
-  reddit_ads__campaign_passthrough_metrics: []
   reddit_ads__account_conversions_passthrough_metrics: []
+  reddit_ads__ad_group_passthrough_metrics: []
   reddit_ads__ad_group_conversions_passthrough_metrics: []
+  reddit_ads__ad_passthrough_metrics: []
   reddit_ads__ad_conversions_passthrough_metrics: []
+  reddit_ads__campaign_passthrough_metrics: []
   reddit_ads__campaign_conversions_passthrough_metrics: []
+  reddit_ads__campaign_country_conversions_passthrough_metrics: []
+  reddit_ads__campaign_country_conversions_passthrough_metrics: []

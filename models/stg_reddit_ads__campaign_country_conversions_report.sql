@@ -1,3 +1,4 @@
+{{ config(enabled=var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads_campaign_country_conversions_report_enabled', True)) }}
 
 with base as (
 
@@ -24,22 +25,17 @@ fields as (
 final as (
     
     select 
-        source_relation,
-        date as date_day,
+        source_relation, 
+        _fivetran_synced,
         account_id,
         campaign_id,
+        date as date_day,
         country,
-        avg_value,
-        click_through_conversion_attribution_window_day,
-        click_through_conversion_attribution_window_month,
-        click_through_conversion_attribution_window_week,
-        event_name,
-        total_items,
-        total_value,
-        view_through_conversion_attribution_window_day,
-        view_through_conversion_attribution_window_month,
-        view_through_conversion_attribution_window_week,
-        _fivetran_synced
+        lower(event_name) as event_name,
+        coalesce(total_items,0) as total_items,
+        coalesce(total_value,0) as total_value,
+        coalesce(click_through_conversion_attribution_window_month,0) as conversions,
+        coalesce(view_through_conversion_attribution_window_month,0) as view_through_conversions
     from fields
 )
 

@@ -3,57 +3,24 @@
 {% set columns = [
     {"name": "_fivetran_synced", "datatype": dbt.type_timestamp()},
     {"name": "account_id", "datatype": dbt.type_string()},
-    {"name": "app_install_metrics_add_payment_info", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_add_to_cart", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_app_launch", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_completed_tutorial", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_install", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_level_achieved", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_purchase", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_search", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_sign_up", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_spend", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_spend_credits", "datatype": dbt.type_int()},
-    {"name": "app_install_metrics_view_content", "datatype": dbt.type_int()},
     {"name": "campaign_id", "datatype": dbt.type_string()},
     {"name": "clicks", "datatype": dbt.type_int()},
-    {"name": "comment_downvotes", "datatype": dbt.type_int()},
-    {"name": "comment_upvotes", "datatype": dbt.type_int()},
-    {"name": "comments_page_views", "datatype": dbt.type_int()},
-    {"name": "conversion_roas", "datatype": dbt.type_float()},
     {"name": "country", "datatype": dbt.type_string()},
-    {"name": "cpc", "datatype": dbt.type_float()},
-    {"name": "ctr", "datatype": dbt.type_float()},
     {"name": "date", "datatype": "date"},
-    {"name": "ecpm", "datatype": dbt.type_float()},
-    {"name": "gallery_item_caption", "datatype": dbt.type_string()},
-    {"name": "gallery_item_id", "datatype": dbt.type_string()},
     {"name": "impressions", "datatype": dbt.type_int()},
-    {"name": "legacy_click_conversions_attribution_window_day", "datatype": dbt.type_int()},
-    {"name": "legacy_click_conversions_attribution_window_month", "datatype": dbt.type_int()},
-    {"name": "legacy_click_conversions_attribution_window_week", "datatype": dbt.type_int()},
-    {"name": "legacy_view_conversions_attribution_window_day", "datatype": dbt.type_int()},
-    {"name": "legacy_view_conversions_attribution_window_month", "datatype": dbt.type_int()},
-    {"name": "legacy_view_conversions_attribution_window_week", "datatype": dbt.type_int()},
-    {"name": "priority", "datatype": dbt.type_string()},
     {"name": "region", "datatype": dbt.type_string()},
-    {"name": "spend", "datatype": dbt.type_int()},
-    {"name": "video_fully_viewable_impressions", "datatype": dbt.type_int()},
-    {"name": "video_plays_expanded", "datatype": dbt.type_int()},
-    {"name": "video_plays_with_sound", "datatype": dbt.type_int()},
-    {"name": "video_started", "datatype": dbt.type_int()},
-    {"name": "video_viewable_impressions", "datatype": dbt.type_int()},
-    {"name": "video_watched_100_percent", "datatype": dbt.type_int()},
-    {"name": "video_watched_10_seconds", "datatype": dbt.type_int()},
-    {"name": "video_watched_25_percent", "datatype": dbt.type_int()},
-    {"name": "video_watched_3_seconds", "datatype": dbt.type_int()},
-    {"name": "video_watched_50_percent", "datatype": dbt.type_int()},
-    {"name": "video_watched_5_seconds", "datatype": dbt.type_int()},
-    {"name": "video_watched_75_percent", "datatype": dbt.type_int()},
-    {"name": "video_watched_95_percent", "datatype": dbt.type_int()},
-    {"name": "viewable_impressions", "datatype": dbt.type_int()},
-    {"name": "viewer_comments", "datatype": dbt.type_int()}
+    {"name": "spend", "datatype": dbt.type_int()}
 ] %}
+
+{% if target.type in ('bigquery', 'spark', 'databricks') %}
+    {{ columns.append( {"name": 'date', "datatype": "date", "quote": True, "alias": "date_day" } ) }}
+
+{% else %}
+    {{ columns.append( {"name": 'date', "datatype": "date", "alias": "date_day"} ) }}
+
+{% endif %}
+
+{{ fivetran_utils.add_pass_through_columns(columns, var('reddit_ads__ad_group_passthrough_metrics')) }}
 
 {{ return(columns) }}
 

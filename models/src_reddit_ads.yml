@@ -454,144 +454,52 @@ sources:
 
       - name: campaign_country_report
         identifier: '{{ var("reddit_ads_campaign_country_report_identifier", "campaign_country_report") }}'
-        # description: '{{ doc("campaign_country_report") }}'
-        # columns:
-        #   - name: account_id
-        #     description: '{{ doc("account_id") }}'
-        #   - name: campaign_id
-        #     description: '{{ doc("campaign_id") }}'
-        #   - name: country
-        #     description: '{{ doc("country") }}'
-        #   - name: date
-        #     description: '{{ doc("date") }}'
-        #   - name: _fivetran_synced
-        #     description: '{{ doc("_fivetran_synced") }}'
-        #   - name: app_install_metrics_add_payment_info
-        #     description: '{{ doc("app_install_metrics_add_payment_info") }}'
-        #   - name: app_install_metrics_add_to_cart
-        #     description: '{{ doc("app_install_metrics_add_to_cart") }}'
-        #   - name: app_install_metrics_app_launch
-        #     description: '{{ doc("app_install_metrics_app_launch") }}'
-        #   - name: app_install_metrics_completed_tutorial
-        #     description: '{{ doc("app_install_metrics_completed_tutorial") }}'
-        #   - name: app_install_metrics_install
-        #     description: '{{ doc("app_install_metrics_install") }}'
-        #   - name: app_install_metrics_level_achieved
-        #     description: '{{ doc("app_install_metrics_level_achieved") }}'
-        #   - name: app_install_metrics_purchase
-        #     description: '{{ doc("app_install_metrics_purchase") }}'
-        #   - name: app_install_metrics_search
-        #     description: '{{ doc("app_install_metrics_search") }}'
-        #   - name: app_install_metrics_sign_up
-        #     description: '{{ doc("app_install_metrics_sign_up") }}'
-        #   - name: app_install_metrics_spend
-        #     description: '{{ doc("app_install_metrics_spend") }}'
-        #   - name: app_install_metrics_spend_credits
-        #     description: '{{ doc("app_install_metrics_spend_credits") }}'
-        #   - name: app_install_metrics_view_content
-        #     description: '{{ doc("app_install_metrics_view_content") }}'
-        #   - name: clicks
-        #     description: '{{ doc("clicks") }}'
-        #   - name: comment_downvotes
-        #     description: '{{ doc("comment_downvotes") }}'
-        #   - name: comment_upvotes
-        #     description: '{{ doc("comment_upvotes") }}'
-        #   - name: comments_page_views
-        #     description: '{{ doc("comments_page_views") }}'
-        #   - name: conversion_roas
-        #     description: '{{ doc("conversion_roas") }}'
-        #   - name: cpc
-        #     description: '{{ doc("cpc") }}'
-        #   - name: ctr
-        #     description: '{{ doc("ctr") }}'
-        #   - name: ecpm
-        #     description: '{{ doc("ecpm") }}'
-        #   - name: gallery_item_caption
-        #     description: '{{ doc("gallery_item_caption") }}'
-        #   - name: gallery_item_id
-        #     description: '{{ doc("gallery_item_id") }}'
-        #   - name: impressions
-        #     description: '{{ doc("impressions") }}'
-        #   - name: legacy_click_conversions_attribution_window_day
-        #     description: '{{ doc("legacy_click_conversions_attribution_window_day") }}'
-        #   - name: legacy_click_conversions_attribution_window_month
-        #     description: '{{ doc("legacy_click_conversions_attribution_window_month") }}'
-        #   - name: legacy_click_conversions_attribution_window_week
-        #     description: '{{ doc("legacy_click_conversions_attribution_window_week") }}'
-        #   - name: legacy_view_conversions_attribution_window_day
-        #     description: '{{ doc("legacy_view_conversions_attribution_window_day") }}'
-        #   - name: legacy_view_conversions_attribution_window_month
-        #     description: '{{ doc("legacy_view_conversions_attribution_window_month") }}'
-        #   - name: legacy_view_conversions_attribution_window_week
-        #     description: '{{ doc("legacy_view_conversions_attribution_window_week") }}'
-        #   - name: priority
-        #     description: '{{ doc("priority") }}'
-        #   - name: region
-        #     description: '{{ doc("region") }}'
-        #   - name: spend
-        #     description: '{{ doc("spend") }}'
-        #   - name: video_fully_viewable_impressions
-        #     description: '{{ doc("video_fully_viewable_impressions") }}'
-        #   - name: video_plays_expanded
-        #     description: '{{ doc("video_plays_expanded") }}'
-        #   - name: video_plays_with_sound
-        #     description: '{{ doc("video_plays_with_sound") }}'
-        #   - name: video_started
-        #     description: '{{ doc("video_started") }}'
-        #   - name: video_viewable_impressions
-        #     description: '{{ doc("video_viewable_impressions") }}'
-        #   - name: video_watched_100_percent
-        #     description: '{{ doc("video_watched_100_percent") }}'
-        #   - name: video_watched_10_seconds
-        #     description: '{{ doc("video_watched_10_seconds") }}'
-        #   - name: video_watched_25_percent
-        #     description: '{{ doc("video_watched_25_percent") }}'
-        #   - name: video_watched_3_seconds
-        #     description: '{{ doc("video_watched_3_seconds") }}'
-        #   - name: video_watched_50_percent
-        #     description: '{{ doc("video_watched_50_percent") }}'
-        #   - name: video_watched_5_seconds
-        #     description: '{{ doc("video_watched_5_seconds") }}'
-        #   - name: video_watched_75_percent
-        #     description: '{{ doc("video_watched_75_percent") }}'
-        #   - name: video_watched_95_percent
-        #     description: '{{ doc("video_watched_95_percent") }}'
-        #   - name: viewable_impressions
-        #     description: '{{ doc("viewable_impressions") }}'
-        #   - name: viewer_comments
-        #     description: '{{ doc("viewer_comments") }}'
+        description: '{{ doc("campaign_country_report") }}'
+        config:
+          enabled: "{{ var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads_campaign_country_report_enabled', True) }}"
+        columns:
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: campaign_id
+            description: '{{ doc("campaign_id") }}'
+          - name: country
+            description: '{{ doc("country") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: clicks
+            description: '{{ doc("clicks") }}'
+          - name: impressions
+            description: '{{ doc("impressions") }}'
+          - name: region
+            description: '{{ doc("region") }}'
+          - name: spend
+            description: '{{ doc("spend") }}'
 
       - name: campaign_country_conversions_report
         identifier: '{{ var("reddit_ads_campaign_country_conversions_report_identifier", "campaign_country_conversions_report") }}'
-        # description: '{{ doc("campaign_country_conversions_report") }}'
-        # columns:
-        #   - name: account_id
-        #     description: '{{ doc("account_id") }}'
-        #   - name: campaign_id
-        #     description: '{{ doc("campaign_id") }}'
-        #   - name: country
-        #     description: '{{ doc("country") }}'
-        #   - name: date
-        #     description: '{{ doc("date") }}'
-        #   - name: event_name
-        #     description: '{{ doc("event_name") }}'
-        #   - name: _fivetran_synced
-        #     description: '{{ doc("_fivetran_synced") }}'
-        #   - name: avg_value
-        #     description: '{{ doc("avg_value") }}'
-        #   - name: click_through_conversion_attribution_window_day
-        #     description: '{{ doc("click_through_conversion_attribution_window_day") }}'
-        #   - name: click_through_conversion_attribution_window_month
-        #     description: '{{ doc("click_through_conversion_attribution_window_month") }}'
-        #   - name: click_through_conversion_attribution_window_week
-        #     description: '{{ doc("click_through_conversion_attribution_window_week") }}'
-        #   - name: total_items
-        #     description: '{{ doc("total_items") }}'
-        #   - name: total_value
-        #     description: '{{ doc("total_value") }}'
-        #   - name: view_through_conversion_attribution_window_day
-        #     description: '{{ doc("view_through_conversion_attribution_window_day") }}'
-        #   - name: view_through_conversion_attribution_window_month
-        #     description: '{{ doc("view_through_conversion_attribution_window_month") }}'
-        #   - name: view_through_conversion_attribution_window_week
-        #     description: '{{ doc("view_through_conversion_attribution_window_week") }}'
+        description: '{{ doc("campaign_country_conversions_report") }}'
+        config:
+          enabled: "{{ var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads_campaign_country_conversions_report_enabled', True) }}"
+        columns:
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: campaign_id
+            description: '{{ doc("campaign_id") }}'
+          - name: country
+            description: '{{ doc("country") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: event_name
+            description: '{{ doc("event_name") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: click_through_conversion_attribution_window_month
+            description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+          - name: total_items
+            description: '{{ doc("total_items") }}'
+          - name: total_value
+            description: '{{ doc("total_value") }}'
+          - name: view_through_conversion_attribution_window_month
+            description: '{{ doc("view_through_conversion_attribution_window_month") }}'
