@@ -481,7 +481,7 @@ sources:
         identifier: '{{ var("reddit_ads_campaign_country_conversions_report_identifier", "campaign_country_conversions_report") }}'
         description: '{{ doc("campaign_country_conversions_report") }}'
         config:
-          enabled: "{{ var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads_campaign_country_conversions_report_enabled', True) }}"
+          enabled: "{{ var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads_campaign_country_report_enabled', True) and var('reddit_ads_campaign_country_conversions_report_enabled', True) }}"
         columns:
           - name: account_id
             description: '{{ doc("account_id") }}'

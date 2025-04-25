@@ -39,7 +39,7 @@ If you are _not_ using the [Reddit Ads](https://github.com/fivetran/dbt_reddit_a
 ```yaml
 packages:
   - package: fivetran/reddit_ads_source
-    version: [">=0.3.0", "<0.4.0"]
+    version: [">=0.4.0", "<0.5.0"]
 ```
 ### Step 3: Define database and schema variables
 By default, this package runs using your destination and the `reddit_ads` schema. If this is not where your Reddit Ads data is (for example, if your `reddit_ads` schema is named `reddit_ads_fivetran`), add the following configuration to your root `dbt_project.yml` file:
@@ -50,7 +50,16 @@ vars:
     reddit_ads_schema: your_schema_name 
 ```
 
-### (Optional) Step 4: Additional configurations
+### Step 4: Enable/disable models and sources
+Your Reddit Ads connection may not sync every table that this package expects. If you do not have the `CAMPAIGN_COUNTRY_REPORT` or `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` tables synced, add the following variable to your root `dbt_project.yml` file:
+
+```yml
+vars:
+    reddit_ads_campaign_country_report_enabled: false # Default is true
+    reddit_ads_campaign_country_conversions_report_enabled: false # Default is true, requires CAMPAIGN_COUNTRY_REPORT to be enabled
+```
+
+### (Optional) Step 5: Additional configurations
 <details open><summary>Expand/Collapse details</summary>
 
 #### Union multiple connections
@@ -115,7 +124,7 @@ vars:
 
 </details>
 
-### (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
+### (Optional) Step 6: Orchestrate your models with Fivetran Transformations for dbt Core™
 <details><summary>Expand for more details</summary>
 
 Fivetran offers the ability for you to orchestrate your dbt project through [Fivetran Transformations for dbt Core™](https://fivetran.com/docs/transformations/dbt). Learn how to set up your project for orchestration through Fivetran in our [Transformations for dbt Core™ setup guides](https://fivetran.com/docs/transformations/dbt#setupguide).
