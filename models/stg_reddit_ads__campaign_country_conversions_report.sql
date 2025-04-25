@@ -40,6 +40,8 @@ final as (
         coalesce(total_value,0) as total_value,
         coalesce(click_through_conversion_attribution_window_month,0) as conversions,
         coalesce(view_through_conversion_attribution_window_month,0) as view_through_conversions
+
+        {{ fivetran_utils.fill_pass_through_columns('reddit_ads__campaign_country_conversions_passthrough_metrics') }}
     from fields
 )
 

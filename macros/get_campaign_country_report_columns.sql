@@ -20,7 +20,7 @@
 
 {% endif %}
 
-{{ fivetran_utils.add_pass_through_columns(columns, var('reddit_ads__ad_group_passthrough_metrics')) }}
+{{ fivetran_utils.add_pass_through_columns(columns, var('reddit_ads__campaign_country_passthrough_metrics')) }}
 
 {{ return(columns) }}
 

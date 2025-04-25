@@ -38,6 +38,8 @@ final as (
         coalesce(impressions,0) as impressions,
         region,
         coalesce((spend/1000000),0) as spend
+
+        {{ fivetran_utils.fill_pass_through_columns('reddit_ads__campaign_country_passthrough_metrics') }}
     from fields
 )
 
