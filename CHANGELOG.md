@@ -1,12 +1,23 @@
 # dbt_reddit_ads_source v0.4.0
 [PR #10](https://github.com/fivetran/dbt_reddit_ads_source/pull/10) includes the following updates:
 
-## Features
-- Added:
-  - `CAMPAIGN_COUNTRY_REPORT`
-  - `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT`
+## Schema Changes
+### Models
+6 new models • 0 possible breaking changes
+
+| Model/Column                                                 | Change type | Old name | New name | Notes                                           |
+|--------------------------------------------------------------|-------------|----------|----------|-------------------------------------------------|
+| `stg_reddit_ads__campaign_country_report`            | New Model   |          |          | Uses `CAMPAIGN_COUNTRY_REPORT` source table |
+| `stg_reddit_ads__campaign_country_conversions_report`                      | New Model   |          |          | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
+| `stg_reddit_ads__campaign_country_report_tmp`        | New Model   |          |          | Uses `CAMPAIGN_COUNTRY_REPORT` source table |
+| `stg_reddit_ads__campaign_country_conversions_report_tmp`                  | New Model   |          |          | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
+
+## Under the Hood
+- Added `get_*_columns` macros for new sources
+- Added seed data for testing new sources
 
 ## Documentation
+- Updated dbt documentation to reflect new tables and column additions.
 - Corrected references to connectors and connections in the README. ([#9](https://github.com/fivetran/dbt_reddit_ads_source/pull/9))
 
 # dbt_reddit_ads_source v0.3.0
