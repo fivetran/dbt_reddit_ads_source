@@ -3,7 +3,7 @@
 
 ## Schema Changes
 ### Models
-6 new models • 0 possible breaking changes
+4 new models • 0 possible breaking changes
 
 | Model/Column                                                 | Change type | Old name | New name | Notes                                           |
 |--------------------------------------------------------------|-------------|----------|----------|-------------------------------------------------|
