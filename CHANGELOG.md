@@ -6,10 +6,10 @@
 
 | Data Model                                                   | Change type | Old name | New name | Notes                                           |
 |--------------------------------------------------------------|-------------|----------|----------|-------------------------------------------------|
-| `stg_reddit_ads__campaign_country_report` | New Staging Model | | | Uses `CAMPAIGN_COUNTRY_REPORT` source table |
-| `stg_reddit_ads__campaign_country_conversions_report` | New Staging Model | | | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
-| `stg_reddit_ads__campaign_country_report_tmp` | New Temp Model | | | Uses `CAMPAIGN_COUNTRY_REPORT` source table |
-| `stg_reddit_ads__campaign_country_conversions_report_tmp` | New Temp Model | | | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
+| [`stg_reddit_ads__campaign_country_report`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_report) | New Staging Model   | | | Uses `CAMPAIGN_COUNTRY_REPORT` source table |
+| [`stg_reddit_ads__campaign_country_conversions_report`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_conversions_report) | New Staging Model   | | | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
+| [`stg_reddit_ads__campaign_country_report_tmp`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_report_tmp) | New Temp Model   | | | Uses `CAMPAIGN_COUNTRY_REPORT` source table |
+| [`stg_reddit_ads__campaign_country_conversions_report_tmp`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_conversions_report_tmp) | New Temp Model   | | | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
 
 ## Features
 - Added the following vars to enable/disabled the new `CAMPAIGN_COUNTRY_REPORT` or `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` sources. See the [README](https://github.com/fivetran/dbt_reddit_ads/blob/main/README.md#Step-4-Enable-disable-models-and-sources) for more details.
