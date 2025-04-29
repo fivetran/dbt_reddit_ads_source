@@ -13,10 +13,10 @@
 
 ## Features
 - Added the following vars to enable/disable the new sources. See the [README](https://github.com/fivetran/dbt_reddit_ads_source/blob/main/README.md#Step-4-Enable-disable-models-and-sources) for more details.
-  - `reddit_ads_campaign_country_report_enabled`
+  - `reddit_ads__using_campaign_country_report`
     - Default is `true`. 
     - Will disable `stg_reddit_ads__campaign_country_report` and `stg_reddit_ads__campaign_country_conversions_report` if false.
-  - `reddit_ads_campaign_country_conversions_report_enabled`
+  - `reddit_ads__using_campaign_country_conversions_report`
     - Default is `true`. 
     - Will disable `stg_reddit_ads__campaign_country_conversions_report` if false.
 - Added the following vars to allow bringing additional metrics. Refer to the [README](https://github.com/fivetran/dbt_pinterest_ads/blob/main/README.md#passing-through-additional-metrics) for more details.
