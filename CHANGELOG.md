@@ -12,9 +12,13 @@
 | [`stg_reddit_ads__campaign_country_conversions_report_tmp`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_conversions_report_tmp) | New Temp Model   | | | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
 
 ## Features
-- Added the following vars to enable/disabled the new `CAMPAIGN_COUNTRY_REPORT` or `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` sources. See the [README](https://github.com/fivetran/dbt_reddit_ads/blob/main/README.md#Step-4-Enable-disable-models-and-sources) for more details.
-  - `reddit_ads_campaign_country_report_enabled` - default is `true`
-  - `reddit_ads_campaign_country_conversions_report_enabled` - default is `true`, requires `CAMPAIGN_COUNTRY_REPORT`
+- Added the following vars to enable/disabled the new `CAMPAIGN_COUNTRY_REPORT` or `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` sources. See the [README](https://github.com/fivetran/dbt_reddit_ads_source/blob/main/README.md#Step-4-Enable-disable-models-and-sources) for more details.
+  - `reddit_ads_campaign_country_report_enabled`
+    - Default is `true`. 
+    - Will disable `stg_reddit_ads__campaign_country_report` and `stg_reddit_ads__campaign_country_conversions_report` if false.
+  - `reddit_ads_campaign_country_conversions_report_enabled`
+    - Default is `true`. 
+    - Will disable `stg_reddit_ads__campaign_country_conversions_report` if false.
 
 ## Under the Hood
 - Added `get_*_columns` macros for new sources
