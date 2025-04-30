@@ -280,3 +280,15 @@ Provides a summary of conversion events at the campaign level, aggregating key m
 {% docs stg_reddit_ads__campaign_conversions_report %}
 Provides a summary of conversion events at the campaign level, aggregating key metrics by event and day such as view-through and click-through conversions.
 {% enddocs %}
+
+{% docs campaign_country_report %}
+Each record represents a summary of events at the date, country, and campaign level.
+{% enddocs %}
+
+{% docs campaign_country_conversions_report %}
+Provides a summary of conversion events at the campaign and country level, aggregating key metrics by event and day such as view-through and click-through conversions.
+{% enddocs %}
+
+{% docs country %}
+The country associated with the record.
+{% enddocs %}

@@ -451,3 +451,55 @@ sources:
             description: '{{ doc("view_through_conversion_attribution_window_day") }}'
           - name: view_through_conversion_attribution_window_week
             description: '{{ doc("view_through_conversion_attribution_window_week") }}'
+
+      - name: campaign_country_report
+        identifier: '{{ var("reddit_ads_campaign_country_report_identifier", "campaign_country_report") }}'
+        description: '{{ doc("campaign_country_report") }}'
+        config:
+          enabled: "{{ var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads__using_campaign_country_report', True) }}"
+        columns:
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: campaign_id
+            description: '{{ doc("campaign_id") }}'
+          - name: country
+            description: '{{ doc("country") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: clicks
+            description: '{{ doc("clicks") }}'
+          - name: impressions
+            description: '{{ doc("impressions") }}'
+          - name: region
+            description: '{{ doc("region") }}'
+          - name: spend
+            description: '{{ doc("spend") }}'
+
+      - name: campaign_country_conversions_report
+        identifier: '{{ var("reddit_ads_campaign_country_conversions_report_identifier", "campaign_country_conversions_report") }}'
+        description: '{{ doc("campaign_country_conversions_report") }}'
+        config:
+          enabled: "{{ var('ad_reporting__reddit_ads_enabled', True) and var('reddit_ads__using_campaign_country_report', True) and var('reddit_ads__using_campaign_country_conversions_report', True) }}"
+        columns:
+          - name: account_id
+            description: '{{ doc("account_id") }}'
+          - name: campaign_id
+            description: '{{ doc("campaign_id") }}'
+          - name: country
+            description: '{{ doc("country") }}'
+          - name: date
+            description: '{{ doc("date") }}'
+          - name: event_name
+            description: '{{ doc("event_name") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: click_through_conversion_attribution_window_month
+            description: '{{ doc("click_through_conversion_attribution_window_month") }}'
+          - name: total_items
+            description: '{{ doc("total_items") }}'
+          - name: total_value
+            description: '{{ doc("total_value") }}'
+          - name: view_through_conversion_attribution_window_month
+            description: '{{ doc("view_through_conversion_attribution_window_month") }}'

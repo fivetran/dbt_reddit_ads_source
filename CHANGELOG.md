@@ -1,6 +1,36 @@
-# dbt_reddit_ads_source version.version
+# dbt_reddit_ads_source v0.4.0
+[PR #10](https://github.com/fivetran/dbt_reddit_ads_source/pull/10) includes the following updates:
+
+## Schema Changes
+4 new models • 0 possible breaking changes
+
+| Data Model                                                   | Change type | Old name | New name | Notes                                           |
+|--------------------------------------------------------------|-------------|----------|----------|-------------------------------------------------|
+| [`stg_reddit_ads__campaign_country_report`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_report) | New Staging Model   | | | Uses `CAMPAIGN_COUNTRY_REPORT` source table |
+| [`stg_reddit_ads__campaign_country_conversions_report`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_conversions_report) | New Staging Model   | | | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
+| [`stg_reddit_ads__campaign_country_report_tmp`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_report_tmp) | New Temp Model   | | | Uses `CAMPAIGN_COUNTRY_REPORT` source table |
+| [`stg_reddit_ads__campaign_country_conversions_report_tmp`](https://fivetran.github.io/dbt_reddit_ads/#!/model/model.reddit_ads.stg_reddit_ads__campaign_country_conversions_report_tmp) | New Temp Model   | | | Uses `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` source table       |
+
+## Features
+- Added the following vars to enable/disable the new sources. See the [README](https://github.com/fivetran/dbt_reddit_ads_source/blob/main/README.md#Step-4-Enable-disable-models-and-sources) for more details.
+  - `reddit_ads__using_campaign_country_report`
+    - Default is `true`. 
+    - Will disable `stg_reddit_ads__campaign_country_report` and `stg_reddit_ads__campaign_country_conversions_report` if false.
+  - `reddit_ads__using_campaign_country_conversions_report`
+    - Default is `true`. 
+    - Will disable `stg_reddit_ads__campaign_country_conversions_report` if false.
+- Added the following vars to allow bringing additional metrics. Refer to the [README](https://github.com/fivetran/dbt_pinterest_ads/blob/main/README.md#passing-through-additional-metrics) for more details.
+  - `reddit_ads__campaign_country_passthrough_metrics`
+    - Passes additional metrics to `stg_reddit_ads__campaign_country_report`
+  - `reddit_ads__campaign_country_conversions_passthrough_metrics`
+    - Passes additional metrics to `stg_reddit_ads__campaign_country_conversions_report`
+
+## Under the Hood
+- Added `get_*_columns` macros for new sources
+- Added seed data for testing new sources
 
 ## Documentation
+- Updated dbt documentation to reflect new tables and column additions.
 - Corrected references to connectors and connections in the README. ([#9](https://github.com/fivetran/dbt_reddit_ads_source/pull/9))
 
 # dbt_reddit_ads_source v0.3.0
