@@ -1,3 +1,9 @@
+# dbt_reddit_ads_source v0.4.1
+[PR #11](https://github.com/fivetran/dbt_reddit_ads_source/pull/11) includes the following updates:
+
+## Bug Fix
+- Updates the uniqueness test of the recently introduced `stg_reddit_ads__campaign_country_conversions_report` model to include `event_name`. This is aligned with the other `*_conversions_report` tables in this package.
+
 # dbt_reddit_ads_source v0.4.0
 [PR #10](https://github.com/fivetran/dbt_reddit_ads_source/pull/10) includes the following updates:
 

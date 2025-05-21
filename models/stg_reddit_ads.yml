@@ -414,6 +414,7 @@ models:
             - campaign_id
             - country
             - date_day
+            - event_name
     columns:
       - name: account_id
         description: '{{ doc("account_id") }}'
