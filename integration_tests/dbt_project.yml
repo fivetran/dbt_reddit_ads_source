@@ -81,6 +81,9 @@ seeds:
     reddit_ads_business_account_data:
       +column_types:
         id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_account_conversions:
+      +column_types:
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
     reddit_ads_ad_conversions:
       +column_types:
         ad_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
