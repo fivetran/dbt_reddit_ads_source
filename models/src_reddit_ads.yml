@@ -19,7 +19,7 @@ sources:
         identifier: "{{ var('reddit_ads_account_identifier', 'account') }}"
         description: Each record represents information about an account.
         config:
-          enabled: "{{ var('reddit_ads__using_account', False) }}"
+          enabled: "{{ not var('reddit_ads__using_business_account', True) }}"
         columns:
           - name: id
             description: '{{ doc("account_id") }}'

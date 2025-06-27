@@ -40,9 +40,56 @@ seeds:
   +docs:
     show: false
   reddit_ads_source_integration_tests:
-    +column_types:
-      id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
-      campaign_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
-      account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
-      ad_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
-      ad_group_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_ad_data:
+      +column_types:
+        ad_group_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        campaign_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_ad_report_data:
+      +column_types:
+        ad_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_ad_group_data:
+      +column_types:
+        campaign_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_ad_group_report_data:
+      +column_types:
+        ad_group_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_campaign_data:
+      +column_types:
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_campaign_report_data:
+      +column_types:
+        campaign_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_campaign_country_report_data:
+      +column_types:
+        campaign_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_campaign_country_conversions_report_data:
+      +column_types:
+        campaign_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_account_data:
+      +column_types:
+        id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_business_account_data:
+      +column_types:
+        id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_ad_conversions:
+      +column_types:
+        ad_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_ad_group_conversions:
+      +column_types:
+        ad_group_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+    reddit_ads_campaign_conversions:
+      +column_types:
+        campaign_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"
+        account_id: "{{ 'string' if target.type in ['bigquery','spark','databricks'] else 'varchar(255)' }}"

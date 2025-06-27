@@ -1,6 +1,6 @@
 {{ config(enabled=var('ad_reporting__reddit_ads_enabled', True)) }}
 
-{%- set business_account_or_account = which_table('business_account', 'account') -%}
+{%- set business_account_or_account = 'business_account' if var('reddit_ads__using_business_account', True) else 'account' -%}
 
 {{
     fivetran_utils.union_data(
