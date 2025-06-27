@@ -1,3 +1,18 @@
+# dbt_reddit_ads_source v0.6.0
+[PR #14](https://github.com/fivetran/dbt_reddit_ads_source/pull/14) includes the following updates:
+
+## Breaking Change
+- The source used in `stg_reddit_ads__account_tmp` was updated from `ACCOUNT` to `BUSINESS_ACCOUNT`.
+- Added the `reddit_ads__using_business_account` variable to control which source is used. 
+  - For Quickstart users, this variable is set automatically.
+  - For dbt Core users, this variable is `true` by default, but you can set the variable to `false` in your `dbt_project.yml` to fall back to using `ACCOUNT` instead of `BUSINESS_ACCOUNT`.
+
+## Documentation
+- Added documentation for `BUSINESS_ACCOUNT`.
+
+## Under the Hood
+- Updated the seed column types in `integration_tests/dbt_project.yml`.
+
 # dbt_reddit_ads_source v0.5.0
 
 [PR #13](https://github.com/fivetran/dbt_reddit_ads_source/pull/13) includes the following updates:
