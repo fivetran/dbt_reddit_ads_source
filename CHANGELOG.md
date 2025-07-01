@@ -11,7 +11,7 @@
 - Added documentation for `BUSINESS_ACCOUNT`.
 
 ## Under the Hood
-- Added seed `reddit_ads_business_account_data`.
+- Added seed file `reddit_ads_business_account_data`.
 - Updated the seed column types in `integration_tests/dbt_project.yml`.
 
 # dbt_reddit_ads_source v0.5.0
