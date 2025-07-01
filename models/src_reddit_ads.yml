@@ -18,6 +18,31 @@ sources:
       - name: account
         identifier: "{{ var('reddit_ads_account_identifier', 'account') }}"
         description: Each record represents information about an account.
+        config:
+          enabled: "{{ not var('reddit_ads__using_business_account', True) }}"
+        columns:
+          - name: id
+            description: '{{ doc("account_id") }}'
+          - name: attribution_type
+            description: '{{ doc("attribution_type") }}'
+          - name: click_attribution_window
+            description: '{{ doc("click_attribution_window") }}'
+          - name: created_at
+            description: '{{ doc("created_at") }}'
+          - name: currency
+            description: '{{ doc("currency") }}'
+          - name: status
+            description: '{{ doc("status") }}'
+          - name: time_zone_id
+            description: '{{ doc("time_zone_id") }}'
+          - name: view_attribution_window
+            description: '{{ doc("view_attribution_window") }}'
+
+      - name: business_account
+        identifier: "{{ var('reddit_ads_business_account_identifier', 'business_account') }}"
+        description: Each record represents information about an account.
+        config:
+          enabled: "{{ var('reddit_ads__using_business_account', True) }}"
         columns:
           - name: id
             description: '{{ doc("account_id") }}'

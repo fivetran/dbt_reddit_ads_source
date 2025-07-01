@@ -41,7 +41,7 @@ If you are _not_ using the [Reddit Ads](https://github.com/fivetran/dbt_reddit_a
 ```yaml
 packages:
   - package: fivetran/reddit_ads_source
-    version: [">=0.5.0", "<0.6.0"]
+    version: [">=0.6.0", "<0.7.0"]
 ```
 ### Step 3: Define database and schema variables
 By default, this package runs using your destination and the `reddit_ads` schema. If this is not where your Reddit Ads data is (for example, if your `reddit_ads` schema is named `reddit_ads_fivetran`), add the following configuration to your root `dbt_project.yml` file:
@@ -53,10 +53,11 @@ vars:
 ```
 
 ### Step 4: Enable/disable models and sources
-Your Reddit Ads connection may not sync every table that this package expects. If you do not have the `CAMPAIGN_COUNTRY_REPORT` or `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` tables synced, add the following variable to your root `dbt_project.yml` file:
+Your Reddit Ads connection may not sync every table that this package expects. If you do not have the `BUSINESS_ACCOUNT`, `CAMPAIGN_COUNTRY_REPORT` or `CAMPAIGN_COUNTRY_CONVERSIONS_REPORT` tables synced, add the corresponding following variable to your root `dbt_project.yml` file. Note that if `BUSINESS_ACCOUNT` is not available, setting the variable to false will fall back to using the `ACCOUNT` table instead.
 
 ```yml
 vars:
+    reddit_ads__using_business_account: false # Default is true. Will use ACCOUNT if set to false.
     reddit_ads__using_campaign_country_report: false # Default is true
     reddit_ads__using_campaign_country_conversions_report: false # Default is true, requires CAMPAIGN_COUNTRY_REPORT to be enabled
 ```
