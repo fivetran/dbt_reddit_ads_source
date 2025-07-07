@@ -1,3 +1,9 @@
+# dbt_reddit_ads_source v0.6.1
+[PR #16](https://github.com/fivetran/dbt_reddit_ads_source/pull/16) includes the following updates:
+
+## Bug Fixes
+- 
+
 # dbt_reddit_ads_source v0.6.0
 [PR #14](https://github.com/fivetran/dbt_reddit_ads_source/pull/14) includes the following updates:
 

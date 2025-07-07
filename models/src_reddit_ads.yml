@@ -19,7 +19,7 @@ sources:
         identifier: "{{ var('reddit_ads_account_identifier', 'account') }}"
         description: Each record represents information about an account.
         config:
-          enabled: "{{ not var('reddit_ads__using_business_account', True) }}"
+          enabled: "{{ (not var('reddit_ads__using_business_account', True) and var('ad_reporting__reddit_ads_enabled', True)) }}"
         columns:
           - name: id
             description: '{{ doc("account_id") }}'
@@ -42,7 +42,7 @@ sources:
         identifier: "{{ var('reddit_ads_business_account_identifier', 'business_account') }}"
         description: Each record represents information about an account.
         config:
-          enabled: "{{ var('reddit_ads__using_business_account', True) }}"
+          enabled: "{{ (var('reddit_ads__using_business_account', True) and var('ad_reporting__reddit_ads_enabled', True)) }}"
         columns:
           - name: id
             description: '{{ doc("account_id") }}'
