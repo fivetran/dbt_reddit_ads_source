@@ -1,3 +1,9 @@
+# dbt_reddit_ads_source v0.6.1
+[PR #16](https://github.com/fivetran/dbt_reddit_ads_source/pull/16) includes the following updates:
+
+## Bug Fixes
+- Fixed a bug where freshness tests were still run for source `BUSINESS_ACCOUNT` even if var `ad_reporting__reddit_ads_enabled` is set to false. 
+
 # dbt_reddit_ads_source v0.6.0
 [PR #14](https://github.com/fivetran/dbt_reddit_ads_source/pull/14) includes the following updates:
 
