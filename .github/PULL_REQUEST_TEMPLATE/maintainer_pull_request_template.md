@@ -27,6 +27,7 @@ Before marking this PR as "ready for review":
   - [ ] **Validation Steps:** Check for unintentional effects (e.g., add/run consistency & integrity tests)
   - [ ] **Testing Instructions:** Confirm the change addresses the issue(s)
   - [ ] **Focus Areas:** Complex logic or queries that need extra attention  
+- [ ] Merge any relevant open PRs into this PR
 
 ### Changelog  
 <!-- Recommend drafting changelog notes, then refining via ChatGPT using:  
