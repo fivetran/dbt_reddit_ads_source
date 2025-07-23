@@ -1,3 +1,23 @@
+# dbt_reddit_ads_source v0.6.2
+[PR #18](https://github.com/fivetran/dbt_reddit_ads_source/pull/18) includes the following updates:
+
+## Schema & Data Updates
+**5 total changes • 0 possible breaking changes**
+
+| Data Model | Change Type | Old Name | New Name | Notes |
+| --- | --- | --- | --- | --- |
+| `stg_reddit_ads__account_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
+| `stg_reddit_ads__ad_group_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
+| `stg_reddit_ads__ad_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
+| `stg_reddit_ads__campaign_country_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
+| `stg_reddit_ads__campaign_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
+
+## Bug Fixes
+- Updated the datatype of the `spend` fields from `BIGINT` to `NUMERIC` to avoid rounding when converting to dollars and ensure full decimal precision is preserved.
+
+## Features
+- Added macro `convert_microcurrency` to convert microcurrency fields (e.g. BIGINT) to NUMERIC dollar values. Casts both the input and constants to `dbt.type_numeric()` to preserve fixed-point precision.
+
 # dbt_reddit_ads_source v0.6.1
 [PR #16](https://github.com/fivetran/dbt_reddit_ads_source/pull/16) includes the following updates:
 
