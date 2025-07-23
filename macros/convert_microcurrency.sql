@@ -9,7 +9,6 @@
     - The `value` is often a BIGINT, so casting ensures precision-safe division.
     - `1000000` and '0' are INT literals, which some warehouses would promote the division to FLOAT if not cast — risking precision loss.*/
 
-{% macro default__convert_microcurrency(value) %}
     coalesce(
         cast({{ value }} as {{ dbt.type_numeric() }}) / cast(1000000 as {{ dbt.type_numeric() }}),
         cast(0 as {{ dbt.type_numeric() }})
