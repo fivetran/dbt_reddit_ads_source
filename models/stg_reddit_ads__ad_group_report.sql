@@ -34,7 +34,7 @@ final as (
         date as date_day,
         coalesce(impressions,0) as impressions,
         region,
-        coalesce((spend/1000000),0) as spend
+        {{ reddit_ads_source.convert_microcurrency('spend') }} as spend
         
         {{ fivetran_utils.fill_pass_through_columns('reddit_ads__ad_group_passthrough_metrics') }}
     from fields
