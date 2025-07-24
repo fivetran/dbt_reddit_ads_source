@@ -39,9 +39,9 @@ dispatch:
 If you are _not_ using the [Reddit Ads](https://github.com/fivetran/dbt_reddit_ads) transformation package or the [Ad Reporting](https://github.com/fivetran/dbt_ad_reporting) combination package, include the following reddit_ads_source package version in your `packages.yml` file.
 > TIP: Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.
 ```yaml
-packages:
+packages:ß
   - package: fivetran/reddit_ads_source
-    version: [">=0.6.0", "<0.7.0"]
+    version: [">=0.7.0", "<0.8.0"]
 ```
 ### Step 3: Define database and schema variables
 By default, this package runs using your destination and the `reddit_ads` schema. If this is not where your Reddit Ads data is (for example, if your `reddit_ads` schema is named `reddit_ads_fivetran`), add the following configuration to your root `dbt_project.yml` file:

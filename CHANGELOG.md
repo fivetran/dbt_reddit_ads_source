@@ -1,8 +1,8 @@
-# dbt_reddit_ads_source v0.6.2
+# dbt_reddit_ads_source v0.7.0
 [PR #18](https://github.com/fivetran/dbt_reddit_ads_source/pull/18) includes the following updates:
 
 ## Schema & Data Updates
-**5 total changes • 0 possible breaking changes**
+**5 total changes • 5 possible breaking changes**
 
 | Data Model | Change Type | Old Name | New Name | Notes |
 | --- | --- | --- | --- | --- |
@@ -12,7 +12,7 @@
 | `stg_reddit_ads__campaign_country_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
 | `stg_reddit_ads__campaign_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
 
-## Bug Fixes
+## Breaking Change
 - Updated the datatype of the `spend` fields from `BIGINT` to `NUMERIC` to avoid rounding when converting to dollars and ensure full decimal precision is preserved.
 
 ## Features
