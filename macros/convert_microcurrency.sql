@@ -3,5 +3,5 @@
 {% endmacro %}
 
 {% macro default__convert_microcurrency(value) %}
-    coalesce(cast({{ value }} as {{ dbt.type_numeric() }}) / 10000000, 0)
+    coalesce(cast({{ value }} as {{ dbt.type_numeric() }}) / 1000000, 0)
 {% endmacro %}
