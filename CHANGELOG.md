@@ -18,6 +18,18 @@
 ## Features
 - Added macro `convert_microcurrency` to convert microcurrency fields (e.g. BIGINT) to NUMERIC dollar values. Casts both the input and constants to `dbt.type_numeric()` to preserve fixed-point precision.
 
+[PR #17](https://github.com/fivetran/dbt_reddit_ads_source/pull/17) includes the following updates:
+
+### Under the Hood - July 2025 Updates
+
+- Updated conditions in `.github/workflows/auto-release.yml`.
+- Added `.github/workflows/generate-docs.yml`.
+- Added `+docs: show: False` to `integration_tests/dbt_project.yml`.
+- Migrated `flags` (e.g., `send_anonymous_usage_stats`, `use_colors`) from `sample.profiles.yml` to `integration_tests/dbt_project.yml`.
+- Updated `maintainer_pull_request_template.md` with improved checklist.
+- Updated Python image version to `3.10.13` in `pipeline.yml`.
+- Updated `.gitignore` to exclude additional DBT, Python, and system artifacts.
+
 # dbt_reddit_ads_source v0.6.1
 [PR #16](https://github.com/fivetran/dbt_reddit_ads_source/pull/16) includes the following updates:
 
