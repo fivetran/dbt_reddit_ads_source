@@ -6,14 +6,12 @@
 
 | Data Models | Change Type | Old | New | Notes |
 | --- | --- | --- | --- | --- |
-| `stg_reddit_ads__account_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_group_report` | Column datatype | `spend (BIGINT)` | `spend (NUMERIC)` | Updated the datatype of the `spend` fields from `BIGINT` to `NUMERIC` to avoid rounding when converting to dollars and ensure full decimal precision is preserved.  |
+| `stg_reddit_ads__account_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_report` <br> `stg_reddit_ads__campaign_country_report` <br> `stg_reddit_ads__campaign_report`| Column datatype | `spend` (`BIGINT`) | `spend` (`NUMERIC`) | Updated the datatype of the `spend` fields from `BIGINT` to `NUMERIC` to avoid rounding when converting to dollars and ensure full decimal precision is preserved.  |
 
 ## Features
 - Added macro `convert_microcurrency` to convert microcurrency fields (e.g. BIGINT) to NUMERIC dollar values. Casts both the input and constants to `dbt.type_numeric()` to preserve fixed-point precision.
 
-[PR #17](https://github.com/fivetran/dbt_reddit_ads_source/pull/17) includes the following updates:
-
-### Under the Hood - July 2025 Updates
+## Under the Hood
 
 - Updated conditions in `.github/workflows/auto-release.yml`.
 - Added `.github/workflows/generate-docs.yml`.
