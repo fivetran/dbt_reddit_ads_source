@@ -4,16 +4,9 @@
 ## Schema & Data Updates
 **5 total changes • 5 possible breaking changes**
 
-| Data Model | Change Type | Old Name | New Name | Notes |
+| Data Models | Change Type | Old | New | Notes |
 | --- | --- | --- | --- | --- |
-| `stg_reddit_ads__account_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
-| `stg_reddit_ads__ad_group_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
-| `stg_reddit_ads__ad_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
-| `stg_reddit_ads__campaign_country_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
-| `stg_reddit_ads__campaign_report` | Datatype | `spend (BIGINT)` | `spend (NUMERIC)` |  |
-
-## Breaking Change
-- Updated the datatype of the `spend` fields from `BIGINT` to `NUMERIC` to avoid rounding when converting to dollars and ensure full decimal precision is preserved.
+| `stg_reddit_ads__account_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_group_report` | Column datatype | `spend (BIGINT)` | `spend (NUMERIC)` | Updated the datatype of the `spend` fields from `BIGINT` to `NUMERIC` to avoid rounding when converting to dollars and ensure full decimal precision is preserved.  |
 
 ## Features
 - Added macro `convert_microcurrency` to convert microcurrency fields (e.g. BIGINT) to NUMERIC dollar values. Casts both the input and constants to `dbt.type_numeric()` to preserve fixed-point precision.
