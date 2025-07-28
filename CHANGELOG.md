@@ -6,10 +6,10 @@
 
 | Data Models | Change Type | Old | New | Notes |
 | --- | --- | --- | --- | --- |
-| `stg_reddit_ads__account_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_report` <br> `stg_reddit_ads__campaign_country_report` <br> `stg_reddit_ads__campaign_report`| Column datatype | `spend` (`BIGINT`) | `spend` (`NUMERIC`) | Updated the datatype of the `spend` fields from `BIGINT` to `NUMERIC` to avoid rounding when converting to dollars and ensure full decimal precision is preserved.  |
+| `stg_reddit_ads__account_report` <br> `stg_reddit_ads__ad_group_report` <br> `stg_reddit_ads__ad_report` <br> `stg_reddit_ads__campaign_country_report` <br> `stg_reddit_ads__campaign_report`| Column datatype | `spend` (`INT`) | `spend` (`NUMERIC`) | Updated the datatype of the `spend` fields from `INT` to `NUMERIC` to avoid rounding when converting to dollars and ensure full decimal precision is preserved.  |
 
 ## Features
-- Added macro `convert_microcurrency` to convert microcurrency fields (e.g. BIGINT) to NUMERIC dollar values. Casts both the input and constants to `dbt.type_numeric()` to preserve fixed-point precision.
+- Added macro `convert_microcurrency` to convert microcurrency fields (e.g. INT) to NUMERIC dollar values. Casts both the input and constants to `dbt.type_numeric()` to preserve fixed-point precision.
 
 ## Under the Hood
 
