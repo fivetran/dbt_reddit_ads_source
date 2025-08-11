@@ -221,7 +221,7 @@ Provides a summary of conversion events at the account level, aggregating key me
 The average value of conversions over a given period.
 {% enddocs %}
 
-{% docs click_through_conversion_attribution_window_month %}
+{% docs clicks %}
 The total click-through conversions attributed, for the given month-long window.
 {% enddocs %}
 
@@ -245,7 +245,7 @@ The total number of items involved in a conversion event. This is typically used
 The total monetary value associated with a conversion event.
 {% enddocs %}
 
-{% docs view_through_conversion_attribution_window_month %}
+{% docs views %}
 The total view-through conversions attributed, for the given month-long window.
 {% enddocs %}
 
